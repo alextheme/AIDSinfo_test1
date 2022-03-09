@@ -1,0 +1,42 @@
+mixin header
+	header.header
+		.section_in
+			.header_top
+				.content_wrap
+					.header_logo
+						.header_logo__icon 	
+							+icon('logo')
+						.header_logo__descriptor Global dataset on HIV epidemiology and response
+
+					.header_tools
+						.header_menu
+							+menu({ 
+								gl_class: 'header_menu', 
+								items: [{ title: 'Indicators catalogue'}, { title: 'report builder'}],
+							})
+							.header_menu__language
+								.header_menu__language_btn 
+									.header_menu__language_btn_title english
+									.header_menu__language_arrow
+										+icon('arrow_1')
+								+menu({
+									gl_class: 'header_language',
+									items: [{ title: 'english', active: true }, { title: 'ukrainian' }, { title: 'polish' }, { title: 'germany' }],
+								})
+							
+
+			.header_bottom
+				.content_wrap
+					nav.header_nav
+						+menu({ 
+							gl_class: 'header_nav', 
+							items: [
+								{ title: 'Fact sheets'},
+								{ title: 'Epidemic & response'},
+								{ title: 'key populations'},
+								{ title: 'finance'},
+								{ title: 'law & policies'},
+							],
+						})
+
+				

@@ -1,0 +1,16 @@
+mixin slider(data)
+	.slider_title_box
+		.title= data.title
+		.description= data.description
+	ul.slider_list
+
+		each item, index in data.items
+			li(class= `slider_item item${index + 1}`)
+				.slider_item__item_text_box
+					.item_title__title= item.title
+					.item_title__description= item.descr
+					a(href='#').slider_item__link
+						+icon('arrow_2')
+				.collapsed_block
+
+		

@@ -1,0 +1,5 @@
+@include font_face('Avenir-Heavy', 'Avenir', $font_path, 900);
+@include font_face('Avenir-Roman', 'Avenir', $font_path, 400);
+@include font_face('Avenir-Light', 'Avenir', $font_path, 300);
+@include font_face('Avenir-Book', 'AvenirBook', $font_path, 400);
+@include font_face('Avenir-BookOblique', 'AvenirBook', $font_path, 400, italic);

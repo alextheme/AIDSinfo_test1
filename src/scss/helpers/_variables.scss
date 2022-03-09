@@ -1,0 +1,94 @@
+//---------------------------------------------fonts
+$font_path: "../fonts/";
+$font_1: 'Avenir', sans-serif;
+$font_size_base: 1.5rem;
+//---------------------------------------------fonts###
+
+//---------------------------------------------colors
+$white: #fff;
+$black: #000;
+
+// font
+$color_text_base: $black;
+$color_text_1: #333333;
+$color_text_2: #808284;
+$color_link_base: #4aa3df;
+
+$color_accent: #E31837;
+$color_black_opacity_10: rgba(0, 0, 0, 0.1);
+
+// bg
+$body_bg: $white;
+$color_bg_header: $white;
+$color_bg_1: #F0F0F0;
+$color_bg_2: #808284;
+$color_bg_3: #CDC9C9;
+// bg-footer
+$color_bg_footer_1: #F6F6F6;
+$color_bg_footer_2: #4B4B4B;
+
+//---------------------------------------------colors###
+
+
+//---------------------------------------------slider
+$color_slider_1: hsla(351, 81%, 49%, 0.5);
+$color_slider_2: hsla(351, 80%, 35%, 0.5);
+$color_slider_3: hsla(56, 42%, 66%, 0.5);
+$color_slider_4: hsla(197, 88%, 67%, 0.5);
+$color_slider_5: hsla(15, 88%, 65%, 0.5);
+
+$img_path: "../images/";
+$bg_item_1: $img_path + 'slider_img_1.jpg';
+$bg_item_2: $img_path + 'slider_img_2.jpg';
+$bg_item_3: $img_path + 'slider_img_3.jpg';
+$bg_item_4: $img_path + 'slider_img_4.jpg';
+$bg_item_5: $img_path + 'slider_img_5.jpg';
+$bg_collaps_1: $img_path + 'slider_img_1_collaps.jpg';
+$bg_collaps_2: $img_path + 'slider_img_2_collaps.jpg';
+$bg_collaps_3: $img_path + 'slider_img_3_collaps.jpg';
+$bg_collaps_4: $img_path + 'slider_img_4_collaps.jpg';
+$bg_collaps_5: $img_path + 'slider_img_5_collaps.jpg';
+
+$arrow: $img_path + '';
+
+//---------------------------------------------slider###
+
+
+//---------------------------------------------z-index
+$z-index: (popup : 101,
+	header : 100,
+	footer : 100);
+//---------------------------------------------z-index###
+
+//---------------------------------------------layout
+$page_width: 144rem;
+$page_width_: 144;
+
+$content_wrap: 128rem;
+//---------------------------------------------layout###
+
+//---------------------------------------------global values
+$gl_radius:.5rem;
+//---------------------------------------------global values###
+
+//---------------------------------------------media points
+$point_1: 1200px;
+$point_2: 1024px;
+$point_3: 1023px;
+$point_4: 768px;
+$point_5: 640px;
+$point_6: 480px;
+$point_7: 375px;
+$point_8: 320px;
+//---------------------------------------------media points
+
+//---------------------------------------------forms
+$input_height: 4rem;
+$input_offset: 0 2rem;
+$input_font_size: $font_size_base;
+$input_border_color: #ccc;
+$input_border_color_active: $black;
+$input_placeholder_color: rgba($black, .4);
+$input_text_color: $black;
+$input_radius: $gl_radius;
+//---------------------------------------------forms###
