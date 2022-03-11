@@ -1,6 +1,7 @@
 //---------------------------------------------slider
 $width_s: min(19.6rem, 13.61vw);
 $width_l: min(65.6rem, 46vw);
+$offset_text_slider: 25rem;
 
 .slider_section {
 	position: relative;
@@ -32,22 +33,22 @@ $width_l: min(65.6rem, 46vw);
 }
 
 .slider_item_text_block {
-
 	.slider_item_title {
-		font-size: 3.2rem;
+		font-size: 2rem;
 		font-weight: 300;
-		line-height: 3.4rem;
-		letter-spacing: 0.0625rem;
+		line-height: 2.6rem;
+		letter-spacing: 0.1rem;
 		text-transform: uppercase;
-		white-space: nowrap;
 	}
 
 	.slider_item_description {
+		display: none;
+
 		font-size: 1.4rem;
 		line-height: 2.4rem;
 
 		height: 7rem;
-		margin-bottom: 2.8rem;
+		margin-bottom: 1.2rem;
 
 		overflow: hidden;
 	}
@@ -55,10 +56,10 @@ $width_l: min(65.6rem, 46vw);
 	.slider_item_link {
 		@extend %transition_all;
 
+		display: none;
+
 		position: relative;
 		z-index: 10;
-
-		display: none;
     
     width: min-content;
 
@@ -86,78 +87,117 @@ $width_l: min(65.6rem, 46vw);
 .slider_item {
 	position: relative;
 
-	padding: 58rem 3.2rem 6rem 3.2rem;
+	padding: 60rem 3.2rem 6rem 3.2rem;
 
 	width: $width_s;
 
-	background: #fff;
+	animation: to_narrow 300ms 10ms;
 
-
-}
-
-.item1 {
-	background: url($bg_item_1) no-repeat center center;
-	background-size: cover;
-}
-.item2 {
-	background: url($bg_item_2) no-repeat center center;
-	background-size: cover;
-}
-.item3 {
-	background: url($bg_item_3) no-repeat center center;
-	background-size: cover;
-}
-.item4 {
-	background: url($bg_item_4) no-repeat center center;
-	background-size: cover;
-}
-.item5 {
-	background: url($bg_item_5) no-repeat center center;
-	background-size: cover;
-}
-
-.collapsed_block {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-
-	.item1 & {
+	&.item1 {
 		background: url($bg_collaps_1) no-repeat center center;
 		background-size: cover;
 	}
-	.item2 & {
+	&.item2 {
 		background: url($bg_collaps_2) no-repeat center center;
 		background-size: cover;
 	}
-	.item3 & {
+	&.item3 {
 		background: url($bg_collaps_3) no-repeat center center;
 		background-size: cover;
 	}
-	.item4 & {
+	&.item4 {
 		background: url($bg_collaps_4) no-repeat center center;
 		background-size: cover;
 	}
-	.item5 & {
+	&.item5 {
 		background: url($bg_collaps_5) no-repeat center center;
 		background-size: cover;
 	}
+
+	&.active_mod {
+		&.item1 {
+			background: $color_slider_1 url($bg_item_1) no-repeat center center;
+			background-size: cover;
+		}
+		&.item2 {
+			background: $color_slider_2 url($bg_item_2) no-repeat center center;
+			background-size: cover;
+		}
+		&.item3 {
+			background: $color_slider_3 url($bg_item_3) no-repeat center center;
+			background-size: cover;
+		}
+		&.item4 {
+			background: $color_slider_4 url($bg_item_4) no-repeat center center;
+			background-size: cover;
+		}
+		&.item5 {
+			background: $color_slider_5 url($bg_item_5) no-repeat center center;
+			background-size: cover;
+		}
+	}
 }
+
+/* MODS */
+
+.slider_item.collapse_mod {
+	padding: 56rem 1.2rem 15.7rem;
+}
+
+.collapse_mod .slider_item_text_block {
+	@extend %transition_all;
+
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+
+	margin-top: $offset_text_slider;
+}
+
+.collapse_mod .slider_item_title {
+	@extend %transition_all;
+	margin-bottom: $offset_text_slider;
+}
+
 
 .active_mod {
 	width: $width_l;
-
-	.slider_item__link {
-		display: block;
-	}
-
-	&.slider_item .collapsed_block {
-		background: transparent;
-	}
+	animation: expand_width 300ms 10ms;
 }
 
+.active_mod .slider_item_text_block {
+  animation: show_text_below 1s;
+}
+	
+.active_mod .slider_item_title {
+	margin-bottom: 0.2rem;
+
+	font-size: 3.2rem;
+	letter-spacing: 0.0625rem;
+	white-space: nowrap;
+}
+
+.active_mod .slider_item_description {
+	display: block;
+}
+
+.active_mod .slider_item_link {
+	display: block;
+}
+
+/* ANIMATIONS */
+
 @keyframes expand_width {
-  0%   {width: 10rem;}
+  0%   {width: $width_s;}
   100% {width: $width_l;}
+}
+
+@keyframes to_narrow {
+  0%   {width: $width_l;}
+  100% {width: $width_s;}
+}
+
+@keyframes show_text_below {
+  0%   {margin-top: $offset_text_slider;}
+  100% {margin-top: 0;}
 }

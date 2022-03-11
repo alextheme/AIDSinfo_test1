@@ -5,12 +5,11 @@ mixin slider(data)
 	
 	ul.slider_list
 		each item, index in data.items
-			li(class= `slider_item item${index + 1}`)
+			li(class= `slider_item item${index + 1} collapse_mod`)
 				.slider_item_text_block
 					.slider_item_title= item.title
 					.slider_item_description= item.descr
 					a(href='#').slider_item_link
 						+icon('arrow_2')
-				.collapsed_block
 
 		

@@ -1,26 +1,17 @@
 const slider = () => {
-	const activeClass = 'active_mod';
-	let currentElement = $('.slider_item.item1');
-	let preventElement = null;
+	const activeMod = 'active_mod';
+	const collapseMod = 'collapse_mod';
 
-	currentElement.addClass(activeClass);
+	$('.slider_item.item1').removeClass(collapseMod).addClass(activeMod);
 
 	$('.slider_item').on('mouseover', (e) => {
-		if (e.target.closest('.slider_item__link')) {
-			return;
-		}
+		if (e.target.closest('.slider_item_link')) return;
 
-		if (currentElement) currentElement.removeClass(activeClass);
+		$('.slider_item').addClass(collapseMod).removeClass(activeMod);
 
-		currentElement = $(e.target).parent();
+		const $this = $(e.currentTarget);
 
-		if (preventElement) preventElement.removeClass(activeClass);
-		currentElement.addClass(activeClass);
-	});
-
-	$('.slider_item').on('mouseleave', (e) => {
-		preventElement = currentElement;
-		currentElement = null;
+		$this.addClass(activeMod).removeClass(collapseMod);
 	});
 };
 
