@@ -5,14 +5,14 @@ $width_l: min(65.6rem, 46vw);
 .slider_section {
 	position: relative;
 	margin: 0 auto;
-	max-width: 144rem;
+	max-width: $page_width;
 	height: 78rem;
 	overflow: hidden;
 
 	color: $white;
 }
 
-.slider_title_box {
+.slider_header_block {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -21,18 +21,19 @@ $width_l: min(65.6rem, 46vw);
 	max-width: 74rem;
 	margin: 11.5rem 0 0 8rem;
 
-	.title {
+	.slider_title {
 		font-weight: 300;
 		font-size: 6rem;
 	}
-	.description {
+	.slider_description {
 		font-size: 1.8rem;
 		line-height: 2.6rem;
 	}
 }
 
-.slider_item__item_text_box {
-	.item_title__title {
+.slider_item_text_block {
+
+	.slider_item_title {
 		font-size: 3.2rem;
 		font-weight: 300;
 		line-height: 3.4rem;
@@ -41,7 +42,7 @@ $width_l: min(65.6rem, 46vw);
 		white-space: nowrap;
 	}
 
-	.item_title__description {
+	.slider_item_description {
 		font-size: 1.4rem;
 		line-height: 2.4rem;
 
@@ -51,7 +52,7 @@ $width_l: min(65.6rem, 46vw);
 		overflow: hidden;
 	}
 
-	.slider_item__link {
+	.slider_item_link {
 		@extend %transition_all;
 
 		position: relative;
@@ -144,9 +145,7 @@ $width_l: min(65.6rem, 46vw);
 	}
 }
 
-.active {
-	// animation-name: example;
-  // animation-duration: 2s;
+.active_mod {
 	width: $width_l;
 
 	.slider_item__link {
