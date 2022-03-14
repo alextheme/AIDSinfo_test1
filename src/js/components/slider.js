@@ -3,41 +3,50 @@ const slider = (params) => {
 	const w = window.innerWidth;
 	const activeMod = 'active_mod';
 	const collapseMod = 'collapse_mod';
+
 	const sliderList = $('.slider_list');
 	const sliderItems = $('.slider_item');
 
+	const elementsToShow = 5;
+	const showInterval = 1500;
+
+	let indexElem = 0; // get in class name 'item1, item2, ...'
+
+	// interval show sliders
+	const showSlidersInInterval = () => {
+		const runInterval = () => {
+			return setInterval(() => {
+				sliderItems.addClass(collapseMod).removeClass(activeMod);
+				$(sliderItems[indexElem % elementsToShow]).removeClass(collapseMod).addClass(activeMod);
+				indexElem += 1;
+			}, showInterval);
+		};
+
+		let refreshIntervalId = runInterval();
+
+		sliderList.on('mouseover', (e) => {
+			clearInterval(refreshIntervalId);
+		});
+		sliderList.on('mouseleave', (e) => {
+			refreshIntervalId = runInterval();
+		});
+	};
+
+	$(sliderItems[indexElem]).removeClass(collapseMod).addClass(activeMod);
+
 	sliderList.slick({
-		dots: true,
-		infinite: true,
+		dots: false,
+		infinite: false,
 		speed: 300,
-		slidesToShow: 5,
+		slidesToShow: elementsToShow,
 		adaptiveHeight: true,
 		variableWidth: true,
 	});
 
-	let indexElem = 0;
-
-	$(sliderItems[indexElem]).removeClass(collapseMod).addClass(activeMod);
-
-	const runInterval = () => {
-		return setInterval(() => {
-			sliderItems.addClass(collapseMod).removeClass(activeMod);
-			$(sliderItems[indexElem % 5]).removeClass(collapseMod).addClass(activeMod);
-			indexElem += 1;
-		}, 1500);
-	};
-
-	let refreshIntervalId = runInterval();
-
-	sliderList.on('mouseover', (e) => {
-		clearInterval(refreshIntervalId);
-	});
-	sliderList.on('mouseleave', (e) => {
-		refreshIntervalId = runInterval();
-	});
-
 	sliderItems.on('mouseover', (e) => {
 		if (e.target.closest('.slider_item_link')) return;
+
+		showSlidersInInterval();
 
 		// get element index from class name.
 		// example 'class == item12, index == 12'
