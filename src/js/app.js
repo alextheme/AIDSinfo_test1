@@ -7,9 +7,13 @@ import pageWidgetInit from './dev_vendors/dev_widget';
 
 // ------------------  import components
 import { documentListeners } from './components/documentListeners';
-import { selectLanguage } from './components/header';
+import { header } from './components/header';
 import { slider } from './components/slider';
 // ------------------  import components###
+
+// ------------------  import libs
+import './libs/slick.min';
+// ------------------  import libs###
 
 window.jQuery = $;
 window.$ = $;
@@ -34,8 +38,8 @@ const readyFunc = () => {
 
 const loadFunc = () => {
 	documentListeners();
-	selectLanguage();
-	slider();
+	header(GLOBAL_VARS);
+	slider(GLOBAL_VARS);
 };
 
 documentReady(() => {

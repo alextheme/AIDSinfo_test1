@@ -21,4 +21,13 @@ const selectLanguage = () => {
 	});
 };
 
-export { selectLanguage };
+const mobileMedia = () => {
+	console.log('mobile media');
+};
+
+const header = () => {
+	selectLanguage();
+	mobileMedia();
+};
+
+export { header };

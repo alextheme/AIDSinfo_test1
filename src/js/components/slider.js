@@ -1,8 +1,19 @@
-const slider = () => {
+// import slick from 'slick-carousel';
+const slider = (params) => {
+	const w = window.innerWidth;
 	const activeMod = 'active_mod';
 	const collapseMod = 'collapse_mod';
 	const sliderList = $('.slider_list');
 	const sliderItems = $('.slider_item');
+
+	sliderList.slick({
+		dots: true,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 5,
+		adaptiveHeight: true,
+		variableWidth: true,
+	});
 
 	let indexElem = 0;
 
