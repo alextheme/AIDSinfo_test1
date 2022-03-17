@@ -29,59 +29,6 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
   <link href="css/app.css" rel="stylesheet"></head>
   <body>
-    <header class="header">
-      <div class="section_in">
-        <div class="header_top">
-          <div class="content_wrap">
-            <div class="header_logo">
-              <div class="header_logo__icon">	
-                <svg class="icon icon_logo ">
-                  <use xlink:href="images/sprite/sprite.svg#logo"></use>
-                </svg>
-              </div>
-              <div class="header_logo__descriptor">Global dataset on HIV epidemiology and response</div>
-            </div>
-            <div class="header_tools">
-              <div class="header_menu">
-                <ul class="header_menu__list ">
-                  <li class="header_menu__item  "><a class="header_menu__link " href="#">Indicators catalogue</a></li>
-                  <li class="header_menu__item  "><a class="header_menu__link " href="#">report builder</a></li>
-                </ul>
-                <div class="header_menu__language">
-                  <div class="header_menu__language_btn"> 
-                    <div class="header_menu__language_btn_title">english</div>
-                    <div class="header_menu__language_arrow">
-                      <svg class="icon icon_arrow_1 ">
-                        <use xlink:href="images/sprite/sprite.svg#arrow_1"></use>
-                      </svg>
-                    </div>
-                  </div>
-                  <ul class="header_language__list ">
-                    <li class="header_language__item header_language__item--active_mod "><a class="header_language__link " href="#">english</a></li>
-                    <li class="header_language__item  "><a class="header_language__link " href="#">ukrainian</a></li>
-                    <li class="header_language__item  "><a class="header_language__link " href="#">polish</a></li>
-                    <li class="header_language__item  "><a class="header_language__link " href="#">germany</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="header_bottom">
-          <div class="content_wrap">
-            <nav class="header_nav">
-              <ul class="header_nav__list ">
-                <li class="header_nav__item  "><a class="header_nav__link " href="#">Fact sheets</a></li>
-                <li class="header_nav__item  "><a class="header_nav__link " href="#">Epidemic &amp; response</a></li>
-                <li class="header_nav__item  "><a class="header_nav__link " href="#">key populations</a></li>
-                <li class="header_nav__item  "><a class="header_nav__link " href="#">finance</a></li>
-                <li class="header_nav__item  "><a class="header_nav__link " href="#">law &amp; policies</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
     <div class="wrapper">
       <div class="base">
         <section class="slider_section">
@@ -90,7 +37,13 @@
             <div class="slider_description">UNAIDS leads the world’s most extensive data collection on HIV epidemiology, programme coverage and finance and publishes the most authoritative and up-to-date information on the HIV epidemic.</div>
           </div>
           <ul class="slider_list">
-            <li class="slider_item item1 collapse_mod">
+            <li class="slider_item item1">
+              <picture class="picture_bg_w">
+                <source media="(min-width: 768px)" srcset="images/slider_img_1.jpg.webp" type="image/webp">
+                <source media="(max-width: 767px)" srcset="images/slider_img_1.jpg.webp" type="image/webp">
+                <source media="(min-width: 768px)" srcset="images/slider_img_1.jpg" type="image/jpg">
+                <source media="(max-width: 767px)" srcset="images/slider_img_1.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_1.jpg" alt="">
+              </picture>
               <div class="slider_item_text_block">
                 <div class="slider_item_title">Fact sheets</div>
                 <div class="slider_item_description">Global, regional, and country key facts and figures on HIV &amp; AIDS.</div><a class="slider_item_link" href="#">
@@ -99,7 +52,13 @@
                   </svg></a>
               </div>
             </li>
-            <li class="slider_item item2 collapse_mod">
+            <li class="slider_item item2">
+              <picture class="picture_bg_w">
+                <source media="(min-width: 768px)" srcset="images/slider_img_2.jpg.webp" type="image/webp">
+                <source media="(max-width: 767px)" srcset="images/slider_img_2.jpg.webp" type="image/webp">
+                <source media="(min-width: 768px)" srcset="images/slider_img_2.jpg" type="image/jpg">
+                <source media="(max-width: 767px)" srcset="images/slider_img_2.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_2.jpg" alt="">
+              </picture>
               <div class="slider_item_text_block">
                 <div class="slider_item_title">Epidemic &amp; Response</div>
                 <div class="slider_item_description">HIV epidemiological estimates and country-reported data on their national AIDS response.</div><a class="slider_item_link" href="#">
@@ -108,7 +67,13 @@
                   </svg></a>
               </div>
             </li>
-            <li class="slider_item item3 collapse_mod">
+            <li class="slider_item item3">
+              <picture class="picture_bg_w">
+                <source media="(min-width: 768px)" srcset="images/slider_img_3.jpg.webp" type="image/webp">
+                <source media="(max-width: 767px)" srcset="images/slider_img_3.jpg.webp" type="image/webp">
+                <source media="(min-width: 768px)" srcset="images/slider_img_3.jpg" type="image/jpg">
+                <source media="(max-width: 767px)" srcset="images/slider_img_3.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_3.jpg" alt="">
+              </picture>
               <div class="slider_item_text_block">
                 <div class="slider_item_title">key population</div>
                 <div class="slider_item_description">Data on sex workers, men who have sex with men, people who inject drugs, transgender people, and prisoners a for local-level action for policy-makers, program directors, community activists and advocates among others.</div><a class="slider_item_link" href="#">
@@ -117,7 +82,13 @@
                   </svg></a>
               </div>
             </li>
-            <li class="slider_item item4 collapse_mod">
+            <li class="slider_item item4">
+              <picture class="picture_bg_w">
+                <source media="(min-width: 768px)" srcset="images/slider_img_4.jpg.webp" type="image/webp">
+                <source media="(max-width: 767px)" srcset="images/slider_img_4.jpg.webp" type="image/webp">
+                <source media="(min-width: 768px)" srcset="images/slider_img_4.jpg" type="image/jpg">
+                <source media="(max-width: 767px)" srcset="images/slider_img_4.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_4.jpg" alt="">
+              </picture>
               <div class="slider_item_text_block">
                 <div class="slider_item_title">finance</div>
                 <div class="slider_item_description">More than 85 different indicators on HIV financial resources submitted through Global AIDS Monitoring and triangulated with HIV and Health financial resources from other agencies, aiming to provide strategic information for policy-makers, program directors and researchers.</div><a class="slider_item_link" href="#">
@@ -126,7 +97,13 @@
                   </svg></a>
               </div>
             </li>
-            <li class="slider_item item5 collapse_mod">
+            <li class="slider_item item5">
+              <picture class="picture_bg_w">
+                <source media="(min-width: 768px)" srcset="images/slider_img_5.jpg.webp" type="image/webp">
+                <source media="(max-width: 767px)" srcset="images/slider_img_5.jpg.webp" type="image/webp">
+                <source media="(min-width: 768px)" srcset="images/slider_img_5.jpg" type="image/jpg">
+                <source media="(max-width: 767px)" srcset="images/slider_img_5.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_5.jpg" alt="">
+              </picture>
               <div class="slider_item_text_block">
                 <div class="slider_item_title">Laws &amp; Policies</div>
                 <div class="slider_item_description">HIV-related laws and policies data in countries, reported by both national authorities and civil society to UNAIDS and WHO, aimed at promoting accountability and support joint analysis of policy information with other relevant data to inform national AIDS response. HIV-related laws and policies data in countries, reported by both national authorities and civil society to UNAIDS and WHO, aimed at promoting accountability and support joint analysis of policy information with other relevant data to inform national AIDS response.</div><a class="slider_item_link" href="#">
@@ -137,7 +114,7 @@
             </li>
           </ul>
         </section>
-        <div class="lorem_ipsum_block">
+        <div class="lorem_ipsum_block" style="display: block">
           HELLO! 
           Lorem ipsum dolor sit amet consectetur adipiscing elit sociosqu, rutrum senectus nulla montes fermentum arcu himenaeos cubilia netus, nibh posuere venenatis leo augue mollis vel. Bibendum dignissim placerat potenti lobortis facilisi etiam habitant justo eleifend curabitur sapien, iaculis netus enim vestibulum parturient dis ligula dui tincidunt rhoncus. Praesent integer montes dictumst eros purus lectus blandit inceptos duis, leo eleifend ultrices orci faucibus sapien platea ullamcorper maecenas, hendrerit eget pulvinar cum mauris massa enim ornare. Ultricies massa est sollicitudin faucibus lacinia laoreet eleifend, nam maecenas lobortis eros rutrum sodales, mollis aptent venenatis ultrices mi nisl. Parturient montes vehicula fringilla justo primis habitant, egestas libero dictum hendrerit rutrum cubilia, diam tincidunt non integer orci. 
           Conubia vitae platea nisl tortor blandit nascetur class purus, metus sem scelerisque rhoncus quam dictum tincidunt elementum fringilla, in inceptos malesuada phasellus massa convallis vestibulum. Fermentum eleifend himenaeos risus magnis platea laoreet, class tincidunt cubilia nulla velit vestibulum lorem, elementum congue molestie sem scelerisque. Ligula cum massa iaculis dolor ultrices sit gravida fusce fringilla, placerat ipsum malesuada nisi mauris magnis cursus semper, turpis posuere volutpat leo quisque velit pellentesque diam. Duis vulputate cras libero feugiat nec fusce nisi hendrerit cum, montes gravida litora torquent donec fames erat diam lectus, nascetur molestie consectetur potenti tincidunt risus mauris nisl. 
