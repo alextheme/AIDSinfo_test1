@@ -6,7 +6,7 @@
 		"jquery": true,
 		"es2021": true
 	},
-	"ignorePatterns": ["**/libs/slick.min.js"],
+	"ignorePatterns": ["**/js/plugins/**/*.js"],
 	"rules": {
 		"indent": [
 			2,

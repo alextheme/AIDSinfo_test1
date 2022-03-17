@@ -1,8 +1,9 @@
-// import slick from 'slick-carousel';
+import '../plugins/slick.min';
+
 const slider = (params) => {
-	const w = window.innerWidth;
-	const activeMod = 'active_mod';
-	const collapseMod = 'collapse_mod';
+	const slickCurrent = 'slick-current';
+	const slickActive = 'slick-active';
+	const slickAnimation = 'slick-animation';
 
 	const sliderList = $('.slider_list');
 	const sliderItems = $('.slider_item');
@@ -12,12 +13,12 @@ const slider = (params) => {
 
 	let indexElem = 0; // get in class name 'item1, item2, ...'
 
-	// interval show sliders
+	// // interval show sliders
 	const showSlidersInInterval = () => {
 		const runInterval = () => {
 			return setInterval(() => {
-				sliderItems.addClass(collapseMod).removeClass(activeMod);
-				$(sliderItems[indexElem % elementsToShow]).removeClass(collapseMod).addClass(activeMod);
+				sliderItems.removeClass(slickCurrent);
+				$(sliderItems[indexElem % elementsToShow]).addClass(slickCurrent);
 				indexElem += 1;
 			}, showInterval);
 		};
@@ -32,32 +33,51 @@ const slider = (params) => {
 		});
 	};
 
-	$(sliderItems[indexElem]).removeClass(collapseMod).addClass(activeMod);
+	$(sliderItems[indexElem]).addClass(slickCurrent);
 
 	sliderList.slick({
+		arrows: false,
 		dots: false,
-		infinite: false,
-		speed: 300,
 		slidesToShow: elementsToShow,
 		adaptiveHeight: true,
 		variableWidth: true,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					infinite: true,
+					dots: true,
+					slidesToShow: 1,
+					speed: 300,
+					// autoplay: true,
+					adaptiveHeight: false,
+					variableWidth: false,
+				},
+			},
+		],
 	});
 
-	sliderItems.on('mouseover', (e) => {
-		if (e.target.closest('.slider_item_link')) return;
+	let windowWidth = window.innerWidth;
 
-		showSlidersInInterval();
-
-		// get element index from class name.
-		// example 'class == item12, index == 12'
-		indexElem = +$(e.currentTarget).attr('class').match(/item+\d/)[0].substring(4);
-
-		sliderItems.addClass(collapseMod).removeClass(activeMod);
-
-		const $this = $(e.currentTarget);
-
-		$this.addClass(activeMod).removeClass(collapseMod);
+	$(window).on('resize', () => {
+		windowWidth = window.innerWidth;
 	});
+
+	if (windowWidth > 1023) {
+		sliderItems.on('mouseover', (e) => {
+			if (e.target.closest('.slider_item_link')) return;
+
+			const $this = $(e.currentTarget);
+
+			// showSlidersInInterval();
+			// get element index from class name.
+			// example 'class == item12, index == 12'
+			indexElem = +$this.attr('class').match(/item+\d/)[0].substring(4);
+
+			sliderItems.removeClass(slickCurrent).removeClass(slickActive).addClass(slickActive);
+			$this.addClass(slickCurrent);
+		});
+	}
 };
 
 export { slider };

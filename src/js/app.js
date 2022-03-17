@@ -11,9 +11,9 @@ import { header } from './components/header';
 import { slider } from './components/slider';
 // ------------------  import components###
 
-// ------------------  import libs
-import './libs/slick.min';
-// ------------------  import libs###
+// // ------------------  import libs
+// import './libs/slick.min';
+// // ------------------  import libs###
 
 window.jQuery = $;
 window.$ = $;
