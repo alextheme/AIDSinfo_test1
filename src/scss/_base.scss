@@ -48,8 +48,7 @@ body {
 .base {
 	width: 100%;
 	position: relative;
-	// padding: var(--height-header) 0 0;
-	padding: 20px 0 0;
+	padding: var(--height-header) 0 0;
 	background: #abbaba3d;
 
 	flex: 1 0 auto;
