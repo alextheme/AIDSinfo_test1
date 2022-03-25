@@ -1,0 +1,4 @@
+mixin select_language({ gl_class, language })
+	select(class= `${gl_class}__select languageSelect`)
+		each lang in language
+			option(class= `${gl_class}__option` value= lang)= lang

@@ -1,0 +1,16 @@
+mixin header({ nav, menu, language })
+	+header_desctop({ nav, menu, language })
+	+header_mobile({ nav, menu, language })
+	
++header({
+	nav: [
+		{ title: 'Fact sheets'},
+		{ title: 'Epidemic & response'},
+		{ title: 'key populations'},
+		{ title: 'finance'},
+		{ title: 'law & policies'},
+	],
+	menu: [{ title: 'Indicators catalogue'}, { title: 'report builder'}],
+	language: ['English', 'Deutsch', 'Ukrainian', 'Polish', 'Español', 'Italiano', 'Nederlandse'],
+})
+

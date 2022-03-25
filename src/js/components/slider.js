@@ -1,4 +1,4 @@
-import '../plugins/slick.min';
+import '../plugins/slick/slick.min';
 
 const slider = (params) => {
 	const slickCurrent = 'slick-current';
@@ -9,18 +9,18 @@ const slider = (params) => {
 	const sliderItems = $('.slider_item');
 
 	const elementsToShow = 5;
-	const showInterval = 1500;
-
+	const accordeonSpeed = 1500;
+	let animationProcess = true;
 	let indexElem = 0; // get in class name 'item1, item2, ...'
 
-	// // interval show sliders
-	const showSlidersInInterval = () => {
+	// interval show sliders
+	const autoPlayAccordionSlider = () => {
 		const runInterval = () => {
 			return setInterval(() => {
 				sliderItems.removeClass(slickCurrent);
 				$(sliderItems[indexElem % elementsToShow]).addClass(slickCurrent);
 				indexElem += 1;
-			}, showInterval);
+			}, accordeonSpeed);
 		};
 
 		let refreshIntervalId = runInterval();
@@ -69,13 +69,20 @@ const slider = (params) => {
 
 			const $this = $(e.currentTarget);
 
-			// showSlidersInInterval();
+			// autoPlayAccordionSlider();
 			// get element index from class name.
 			// example 'class == item12, index == 12'
 			indexElem = +$this.attr('class').match(/item+\d/)[0].substring(4);
 
-			sliderItems.removeClass(slickCurrent).removeClass(slickActive).addClass(slickActive);
-			$this.addClass(slickCurrent);
+			if (animationProcess) {
+				animationProcess = false;
+				sliderItems.removeClass(slickCurrent).removeClass(slickActive).addClass(slickActive);
+				$this.addClass(slickCurrent);
+			}
+
+			setTimeout(() => {
+				animationProcess = true;
+			}, 10);
 		});
 	}
 };

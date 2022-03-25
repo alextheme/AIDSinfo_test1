@@ -3,8 +3,13 @@
 	--full-screen: calc(var(--vh, 1vh) * 100);
 
 	--height-header: 13.2rem;
+	--height-header-mobile: 6rem;
 	--height-footer: 23rem;
-	--gl-indent: 3rem;
+	--gl-indent: 8rem;
+
+	@include bp($point_1) {
+		--gl-indent: 1rem;
+	}
 }
 
 html {
@@ -36,9 +41,9 @@ body {
 .wrapper {
 	position: relative;
 
-	width: 100%;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 	min-height: 100%;
 	height: auto !important;
 
@@ -48,10 +53,14 @@ body {
 .base {
 	width: 100%;
 	position: relative;
-	padding: var(--height-header) 0 0;
+	padding: calc(var(--height-header) - 1px) 0 0;
 	background: #abbaba3d;
 
 	flex: 1 0 auto;
+
+	@include bp($point_3) {
+		padding: calc(var(--height-header-mobile) - 1px) 0 0;
+	}
 }
 
 a {

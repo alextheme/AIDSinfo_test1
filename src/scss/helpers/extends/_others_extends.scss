@@ -103,7 +103,7 @@
 
 			&:nth-child(#{$index}) {
 				z-index: 10 + ($index2 - $index);
-			}
+			}	
 
 			$index: $index - 1;
 		}

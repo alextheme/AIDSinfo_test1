@@ -1,0 +1,25 @@
+mixin header_desctop({ nav, menu, language })
+	header.header_desctop
+		.section_in
+			.header_top
+				.header_top_line
+				.header_logo_w
+					h1.header_logo 	
+						a(href="#").heder_logo_link: +icon('logo')
+					.header_logo__descriptor Global dataset on HIV epidemiology and response
+
+				.header_menu
+					+menu({ 
+						gl_class: 'header_menu', 
+						items: menu,
+					})
+
+				+select_language({ gl_class: 'header_language', language })
+
+			.header_bottom
+				nav.header_nav
+					+menu({ 
+						gl_class: 'header_nav', 
+						items: nav
+					})
+

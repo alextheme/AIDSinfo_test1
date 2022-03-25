@@ -23,6 +23,7 @@ $color_bg_header: $white;
 $color_bg_1: #F0F0F0;
 $color_bg_2: #808284;
 $color_bg_3: #CDC9C9;
+$color_bg_mobile_menu: #E31837;
 // bg-footer
 $color_bg_footer_1: #F6F6F6;
 $color_bg_footer_2: #4B4B4B;
@@ -63,6 +64,8 @@ $z-index: (popup : 101,
 //---------------------------------------------layout
 $page_width: 144rem;
 $page_width_: 144;
+
+$width_top_header: 8rem;
 
 $content_wrap: 128rem;
 //---------------------------------------------layout###

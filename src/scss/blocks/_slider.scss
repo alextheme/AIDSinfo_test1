@@ -3,20 +3,8 @@ $height_slider_response: calc(78 / 65.6 * 100vw);
 $width_smal_response: min(calc(54.5vw / 4), 19.6rem);
 $width_big_response: min(45.5vw, 65.6rem);
 
-.item {
-	background: #fadaba;
-	color: #3498db;
-	font-size: 36px;
-	line-height: 100px;
-	margin: 10px;
-	padding: 2rem;
-	position: relative;
-	text-align: center;
 
-	&.slick-current {
-		background: #daa36d;
-	}
-}
+/* SLICK-SLIDER */
 
 .slider_section {
 	position: relative;
@@ -121,9 +109,7 @@ $width_big_response: min(45.5vw, 65.6rem);
 			opacity: 0;
 		}
 
-		40% {
-			opacity: .3;
-		}
+		40% { opacity: .3; }
 
 		100% {
 			width: $width_smal_response;
@@ -134,19 +120,12 @@ $width_big_response: min(45.5vw, 65.6rem);
 
 	/* MEDIA */
 
-	@media only screen and (max-width: 1023px) {
-		.slick-slider {
-			height: auto;
-		}
+	@media only screen and (max-width: $point_3) {
+		.slick-slider { height: auto;}
 
-		.slider_item.slick-slide {
-			height: $height_slider_response;
-		}
+		.slider_item.slick-slide { height: $height_slider_response; }
 
-		.slick-current,
-		.slick-slide {
-			animation: unset;
-		}
+		.slick-current, .slick-slide { animation: unset; }
 
 		.picture_bg_w {
 			height: $height_slider_response;
@@ -160,6 +139,311 @@ $width_big_response: min(45.5vw, 65.6rem);
 			width: 100vw;
 			height: auto;
 			transform: unset;
+		}
+	}
+
+
+	/* TEXT */
+
+	.slider_header_block {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+
+		max-width: 74rem;
+		margin: 11.5rem 0 0 var(--gl-indent);
+
+		color: #fff;
+
+		.slider_title {
+			font-weight: 300;
+			font-size: 6rem;
+		}
+
+		.slider_description {
+			font-size: 1.8rem;
+			line-height: 2.6rem;
+		}
+	}
+
+	.slider_item_text_block {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 2;
+
+		margin-bottom: 16.6rem;
+		padding-left: 2rem;
+
+		color: #fff;
+
+		transition: all .5s ease;
+		will-change: transform;
+
+		.slider_item_title {
+			font-size: 2rem;
+			font-weight: 300;
+			line-height: 2.6rem;
+			letter-spacing: 0.1rem;
+			text-transform: uppercase;
+		}
+
+		.slider_item_description {
+			display: none;
+		}
+
+		.slider_item_link {
+			display: none;
+		}
+	}
+
+	.slick-current {
+
+		.slider_item_text_block {
+			margin-bottom: 6rem;
+			padding-left: 3.2rem;
+			padding-right: 3.2rem;
+		}
+
+		.slider_item_title {
+			font-size: 3.2rem;
+			line-height: 3.4rem;
+			letter-spacing: 0.0625rem;
+		}
+
+		.slider_item_description {
+			display: none;
+			display: block;
+
+			width: 100%;
+
+			font-size: 1.4rem;
+			line-height: 2.4rem;
+			white-space: normal;
+
+			margin-bottom: 1.4rem;
+		}
+
+		.slider_item_link {
+			@extend %transition_all;
+
+			display: block;
+			width: min-content;
+
+			color: #fff;
+
+			.icon_arrow_2 {
+				width: 1.8rem;
+				height: 1rem;
+				fill: #fff;
+			}
+
+			&:hover {
+				@extend %transition_all;
+
+				padding-left: 1rem;
+			}
+		}
+
+		.slider_item_text_block {
+			white-space: normal;
+			opacity: 1;
+			animation: show_text_below 1.2s;
+			transform: none;
+		}
+	}
+
+	/* DOTS */
+
+	.slick-dots {
+		@extend %global_flex_block_row_wrap_center_center;
+
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		justify-content: flex-start;
+
+		margin-bottom: 25%;
+		margin-left: 8rem;
+		width: 100%;
+
+		li {
+			padding: 0 .3em;
+
+			&.slick-active {
+				button {
+					background-color: $white;
+				}
+			}
+
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+
+		button {
+			display: block;
+			width: 0.6rem;
+			height: 0.6rem;
+
+			font-size: 0;
+
+			border-radius: 50%;
+			background-color: rgba(255, 255, 255, .3);
+
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				background-color: $white;
+			}
+
+		}
+	}
+
+
+	/* ANIMATIONS */
+
+	@keyframes show_text_below {
+		0% { opacity: 0; }
+		
+		25% {
+			transform: translate(0, 20rem);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translate(0, 0);
+			opacity: 1;
+		}
+	}
+
+
+/* MEDIA */
+
+	@media only screen and (max-width: $point_1) {
+		.slider_header_block {
+			max-width: 100%;
+		}
+
+		.slick-slide {
+			.slider_item_text_block {				
+				width: min(45.5vw, 65.6rem);
+				white-space: nowrap;
+				transform: rotate(-90deg) translate(16rem, -19rem);
+			}
+
+			&.slick-current .slider_item_title {
+				margin-left: 0;
+				margin-top: 0;
+			}
+
+			&.slick-current .slider_item_text_block {
+				transform: none;
+				width: 100%;
+			}
+		}
+	}
+
+	@media only screen and (max-width: $point_2) {
+		.slick-slide.slick-current .slider_item_text_block {
+			margin-bottom: 0;
+			padding-left: 1rem;
+			padding-bottom: 10rem;
+		}
+
+		.slider_section .slider_header_block {
+			margin: 11.5rem var(--gl-indent) 0;
+		}
+
+		.slick-current .slider_item_description {
+			margin-bottom: 0;
+			height: unset;
+			margin-bottom: 0;
+			padding-bottom: 17rem;
+		}
+
+		.slick-current .slider_item_link {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, -16px) rotate(90deg);
+		}
+
+		.slick-dots {
+			margin-left: 1rem;
+		}
+	}
+
+	@media only screen and (max-width: $point_5) {
+		.slider_header_block {
+			margin-top: 4.4rem;
+
+			.slider_title {
+				font-size: 3.6rem;
+			}
+
+			.slider_description {
+				font-size: 1.4rem;
+				line-height: 1.6;
+				font-weight: 400;
+			}
+		}
+
+		.slick-slide {
+			&.slick-current .slider_item_text_block {
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		}
+
+		.slider_item_text_block {
+			.slider_item_title {
+				font-size: 1.8rem;
+				line-height: 2.6rem;
+
+				margin-bottom: 0.4rem;
+			}
+
+			.slider_item_description {
+				font-size: 1.2rem;
+				line-height: 1.8rem;
+				
+				max-height: 9rem;
+
+				padding-bottom: 6rem;
+				
+				overflow: hidden;
+			}
+		}
+		
+	}
+
+	@media only screen and (max-width: $point_6) {
+		.slider_item_text_block .slider_item_description {
+			padding-bottom: 3rem;
+		}
+	}
+
+	@media only screen and (max-width: $point_7) {
+		.slider_item_text_block .slider_item_description {
+			padding-bottom: 0;
+		}
+	}
+
+	@media only screen and (max-width: $point_8) {
+		.slider_header_block {
+			margin-top: 2.4rem;
+		}
+
+		.slick-slide .slider_item_text_block {
+			padding-bottom: 20%;
+		}
+
+		.slick-dots {
+			margin-bottom: 15%;
 		}
 	}
 }
