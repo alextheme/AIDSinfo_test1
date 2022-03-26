@@ -29,6 +29,93 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
   <link href="css/app.css" rel="stylesheet"></head>
   <body>
+        <header class="header_desctop">
+          <div class="section_in">
+            <div class="header_top">
+              <div class="header_top_line"></div>
+              <div class="header_logo_w">
+                <h1 class="header_logo">	<a class="heder_logo_link" href="#">
+                    <svg class="icon icon_logo ">
+                      <use xlink:href="images/sprite/sprite.svg#logo"></use>
+                    </svg></a></h1>
+                <div class="header_logo__descriptor">Global dataset on HIV epidemiology and response</div>
+              </div>
+              <div class="header_menu">
+                <ul class="header_menu__list ">
+                  <li class="header_menu__item  "><a class="header_menu__link " href="#">Indicators catalogue</a></li>
+                  <li class="header_menu__item  "><a class="header_menu__link " href="#">report builder</a></li>
+                </ul>
+              </div>
+              <select class="header_language__select languageSelect">
+                <option class="header_language__option" value="English">English</option>
+                <option class="header_language__option" value="Deutsch">Deutsch</option>
+                <option class="header_language__option" value="Ukrainian">Ukrainian</option>
+                <option class="header_language__option" value="Polish">Polish</option>
+                <option class="header_language__option" value="Español">Español</option>
+                <option class="header_language__option" value="Italiano">Italiano</option>
+                <option class="header_language__option" value="Nederlandse">Nederlandse</option>
+              </select>
+            </div>
+            <div class="header_bottom">
+              <nav class="header_nav">
+                <ul class="header_nav__list ">
+                  <li class="header_nav__item  "><a class="header_nav__link " href="#">Fact sheets</a></li>
+                  <li class="header_nav__item  "><a class="header_nav__link " href="#">Epidemic &amp; response</a></li>
+                  <li class="header_nav__item  "><a class="header_nav__link " href="#">key populations</a></li>
+                  <li class="header_nav__item  "><a class="header_nav__link " href="#">finance</a></li>
+                  <li class="header_nav__item  "><a class="header_nav__link " href="#">law &amp; policies</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <header class="header_mobile">
+          <div class="section_in">
+            <div class="header_mobile_wrap">
+              <div class="header_top_line"></div><a class="header_mobile_logo" href="#">
+                <svg class="icon icon_logo ">
+                  <use xlink:href="images/sprite/sprite.svg#logo"></use>
+                </svg></a>
+              <div class="header_mobile_search_w">
+                <input class="header_mobile_search_input" type="search" placeholder="search on site">
+                <button class="header_mobile_search_btn">
+                  <svg class="icon icon_search ">
+                    <use xlink:href="images/sprite/sprite.svg#search"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="menu_trigger menuTrigger"><span class="menu_trigger_decor"></span></div>
+            </div>
+          </div>
+          <div class="header_mobile_popap_menu">
+            <nav class="header_mobile_nav">
+              <ul class="header_mobile_nav__list ">
+                <li class="header_mobile_nav__item  header_mobile_nav__item--animate_mod wow animate__fadeInLeft"><a class="header_mobile_nav__link header_mobile_nav__link--animate_mod wow animate__fadeInLeft" href="#">Fact sheets</a></li>
+                <li class="header_mobile_nav__item  header_mobile_nav__item--animate_mod wow animate__fadeInLeft"><a class="header_mobile_nav__link header_mobile_nav__link--animate_mod wow animate__fadeInLeft" href="#">Epidemic &amp; response</a></li>
+                <li class="header_mobile_nav__item  header_mobile_nav__item--animate_mod wow animate__fadeInLeft"><a class="header_mobile_nav__link header_mobile_nav__link--animate_mod wow animate__fadeInLeft" href="#">key populations</a></li>
+                <li class="header_mobile_nav__item  header_mobile_nav__item--animate_mod wow animate__fadeInLeft"><a class="header_mobile_nav__link header_mobile_nav__link--animate_mod wow animate__fadeInLeft" href="#">finance</a></li>
+                <li class="header_mobile_nav__item  header_mobile_nav__item--animate_mod wow animate__fadeInLeft"><a class="header_mobile_nav__link header_mobile_nav__link--animate_mod wow animate__fadeInLeft" href="#">law &amp; policies</a></li>
+              </ul>
+            </nav>
+            <div class="heder_mobile_menu">
+              <ul class="heder_mobile_menu__list ">
+                <li class="heder_mobile_menu__item  "><a class="heder_mobile_menu__link " href="#">Indicators catalogue</a></li>
+                <li class="heder_mobile_menu__item  "><a class="heder_mobile_menu__link " href="#">report builder</a></li>
+              </ul>
+            </div>
+            <div class="header_mobile_language">
+              <select class="header_language__select languageSelect">
+                <option class="header_language__option" value="English">English</option>
+                <option class="header_language__option" value="Deutsch">Deutsch</option>
+                <option class="header_language__option" value="Ukrainian">Ukrainian</option>
+                <option class="header_language__option" value="Polish">Polish</option>
+                <option class="header_language__option" value="Español">Español</option>
+                <option class="header_language__option" value="Italiano">Italiano</option>
+                <option class="header_language__option" value="Nederlandse">Nederlandse</option>
+              </select>
+            </div>
+          </div>
+        </header>
     <div class="wrapper">
       <div class="base">
         <section class="slider_section">
