@@ -39,3 +39,73 @@
 
 	border-radius: $gl_radius;
 }
+
+%btn_wiev_more_queries {
+	@extend %transition_all;
+	position: relative;
+
+	display: flex;
+
+	width: 11.2rem;
+
+	font-size: 1.3rem;
+	font-weight: 400;
+	letter-spacing: 0.13636rem;
+	text-transform: uppercase;
+
+	cursor: pointer;
+	color: $white;
+
+	margin: 0 auto;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		content: '';
+		width: 10px;
+		height: 10px;
+
+		border-bottom: 1px solid rgb(255, 255, 255, 0.5);
+		border-right: 1px solid rgb(255, 255, 255, 0.5);
+
+		transform: rotate(45deg);
+	}
+
+	&:hover {
+		@extend %transition_all;
+
+		color: darken($white, 20%);
+	}
+}
+
+%popular_public_btn {
+	@extend %transition_opacity;
+
+	font-size: 1.5rem;
+	line-height: 2.3rem;
+	font-weight: 400;
+	letter-spacing: .06667rem;
+	text-transform: uppercase;
+	
+	margin-left: auto;
+	
+	color: #000;
+	cursor: pointer;
+
+	&:hover {
+		@extend %transition_opacity;
+		opacity: .5;
+	}
+
+	@include bp($point_3) {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+
+		font-size: 1.2rem;
+
+		margin-right: var(--gl-indent);
+    margin-bottom: calc(-2 * var(--gl-indent));
+	}
+}

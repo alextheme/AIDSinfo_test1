@@ -54,7 +54,7 @@ body {
 	width: 100%;
 	position: relative;
 	padding: calc(var(--height-header) - 1px) 0 0;
-	background: #abbaba3d;
+	background: $white;
 
 	flex: 1 0 auto;
 
@@ -80,10 +80,6 @@ a {
 	margin: 0 auto;
 }
 
-.elements_list {
-	padding: 3rem;
-}
-
 img {
 	// resize
 	// width: 100%;
@@ -93,5 +89,12 @@ img {
 	vertical-align: bottom;
 	line-height: 0;
 }
+
+.icon {
+	fill: inherit; 
+	width: 100%;
+	height: 100%;
+	display: block;
+} 
 
 //------------------------------------------------------------base styles###

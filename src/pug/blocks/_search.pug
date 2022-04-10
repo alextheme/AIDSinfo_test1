@@ -1,0 +1,33 @@
+section.search_section 
+	.search_wrap
+		h3.search_header search data
+		.search_input_w
+			input.search_input(type="search" placeholder="e.g. HIV prevalence, sex workers, South Africa")
+			.btn_search_wrapper.btn_search_settings
+				.search_icon_wrap
+					+icon('slider')
+			.btn_search_wrapper.btn_search_go 
+				.search_icon_wrap
+					+icon('i_search')
+		.search_popular_queries_w
+			h4.search_popular_queries__header popular searches
+			+popular_search([
+				{
+					text: 'HIV prevalence among sex workers',
+					region: 'Eastern and Souther Africa',
+				},
+				{
+					text: 'Budget for HIV and AIDS programmes from domestic public sources',
+					region: 'Global',
+				},
+				{
+					text: 'Elimination of mother-to-child transmission',
+					region: 'Asia & Pacific',
+				},
+			])
+		
+
+		button.button_wiev_more_queries view more 
+
+
+

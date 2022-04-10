@@ -2,7 +2,7 @@ mixin slider(data)
 	.slider_header_block
 		.slider_title= data.title
 		.slider_description= data.description
-	
+
 	ul.slider_list
 		each item, index in data.items
 			li(class= `slider_item item${index + 1}`)
@@ -22,4 +22,4 @@ mixin slider(data)
 					a(href='#').slider_item_link
 						+icon('arrow_2')
 
-		
+
