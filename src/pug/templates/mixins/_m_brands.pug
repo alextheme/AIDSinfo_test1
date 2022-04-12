@@ -1,0 +1,18 @@
+mixin brands(menuArray)
+	- gl_mod = menuArray.gl_mod || ''
+	ul(class=`${menuArray.gl_class}__list`)
+		each item in menuArray.items
+			- url = item.url || '#'
+			li(class= `${menuArray.gl_class}__item ${gl_mod ? `${menuArray.gl_class}__item--${gl_mod}` : ''}`)
+				a(href= url class= `${menuArray.gl_class}__link ${gl_mod ? `${menuArray.gl_class}__link--${gl_mod}` : ''}`)
+					+picture({
+						typeJpeg: false,
+						png: true,
+						media: 768,
+						is2x: false,
+						contain: true,
+						class: 'brands_img_w',
+						img: item.img,
+						img_mob: item.img,
+					})
+

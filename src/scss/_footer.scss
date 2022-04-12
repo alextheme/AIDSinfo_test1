@@ -1,3 +1,12 @@
+%hover_opacity {
+	@extend %transition_opacity;
+
+	&:hover {
+		@extend %transition_opacity;
+		opacity: .5;
+	}
+}
+
 .footer {
 	width: 100%;
 	min-height: var(--height-footer);
@@ -7,3 +16,275 @@
 
 	will-change: transform;
 }
+
+.footer_top_line {
+	width: 100%;
+	height: 1px;
+	background-color: $color_accent;
+}
+
+.footer_top_wrapper,
+.footer_middle_wrapper,
+.footer_bottom_wrapper {
+	width: 100%;
+	padding: 0 var(--gl-indent);
+}
+
+// ---------------------------------------------- footer top
+
+.footer_top_wrapper {
+	display: flex;
+	align-items: center;
+
+	min-height: 10rem;
+
+	background-color: $white;
+
+	@include bp($point_3) {
+		justify-content: center;
+
+		min-height: 7rem;
+
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+}
+
+.footer_logo_w {
+	width: 10.2rem;
+	height: 2rem;
+
+	@include bp($point_3) {
+		display: none;
+	}
+}
+
+.footer_brands_w {
+	display: flex;
+	align-items: center;
+
+	margin-left: auto;
+
+	@include bp($point_3) {
+		margin-left: 0;
+	}
+
+	.brands_title {
+		font-size: 1.2rem;
+		font-weight: 400;
+		letter-spacing: .08333rem;
+
+		margin-right: 4.5rem;
+
+		@include bp($point_3) {
+			display: none;
+		}
+	}
+
+	.brands__list {
+		display: flex;
+		flex-wrap: wrap;
+    justify-content: center;
+	}
+
+	.brands__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 11rem;
+		height: 4rem;
+		margin-right: 5rem;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@include bp($point_3) {
+			width: 8.5rem;
+			height: auto;
+
+			margin: 1rem 2rem;
+
+			&:last-child {
+				margin-right: 2rem;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+// ---------------------------------------------- footer top###
+
+// ---------------------------------------------- footer middle
+
+.footer_middle_wrapper {
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+	min-height: 8rem;
+
+	background-color: $color_bg_footer_1;
+
+	@include bp($point_3) {
+		flex-direction: column;
+
+		min-height: 13rem;
+		padding-top: 3rem;
+		padding-bottom: 1.6rem;
+	}
+}
+
+.footer_menu__list {
+	display: flex;
+
+	@include bp($point_3) {
+		flex-wrap: wrap;
+		justify-content: center;
+
+		margin-bottom: 1.4rem;
+	}
+}
+
+.footer_menu__item {
+	@extend %hover_opacity;
+
+	margin-right: 6rem;
+
+	@include bp($point_3) {
+		margin-left: 2.4rem;
+		margin-right: 2.4rem;
+	}
+}
+
+.footer_menu__link {
+	font-size: 1.3rem;
+	line-height: 2.2rem;
+	font-weight: 400;
+	letter-spacing: 0.15538rem;
+	text-transform: uppercase;
+}
+
+.footer_social_list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	margin-left: auto;
+
+	@include bp($point_3) {
+		margin-left: 0;
+	}
+
+	.social_item {
+		@extend %hover_opacity;
+
+		margin-right: 3rem;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@include bp($point_3) {
+			margin:  1.4rem;
+
+			&:last-child {
+				margin-right: 1.4rem;
+			}
+		}
+	}
+
+	.social_link {}
+
+	.icon {
+		width: 1.6rem;
+		height: 1.6rem;
+	}
+}
+
+// ---------------------------------------------- footer middle###
+
+// ---------------------------------------------- footer bottom
+.footer_bottom_wrapper {
+	display: flex;
+	align-items: center;
+
+	font-size: 1.1rem;
+	font-weight: 400;
+	color: $white;
+
+	width: 100%;
+	min-height: 5rem;
+
+	background-color: $color_bg_footer_2;
+
+	@include bp($point_3) {
+		flex-direction: column;
+
+		min-height: 11rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+}
+
+.footer_copyright {
+	line-height: 1.8rem;
+	text-align: center;
+
+	span {
+		margin-left: 1.6rem;
+		text-transform: uppercase;
+
+		@include bp($point_8) {
+			margin-left: 0;
+		}
+	}
+
+	@include bp($point_3) {
+		margin-bottom: 2rem;
+	}
+}
+
+.footer_links__list {
+	display: flex;
+
+	margin-left: auto;
+
+	@include bp($point_3) {
+    flex-wrap: wrap;
+    justify-content: center;
+
+		margin-left: 0;
+	}
+}
+
+.footer_links__item {
+	margin-right: 2.2rem;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include bp($point_3) {	
+		line-height: 2rem;
+
+		margin-left: 1.1rem;
+		margin-right: 1.1rem;
+
+		&:last-child {
+			margin-right: 1.1rem;
+		}
+	}
+}
+
+.footer_links__link {
+	@extend %hover_opacity;
+}
+
+
+// ---------------------------------------------- footer bottom###

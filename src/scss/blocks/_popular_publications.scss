@@ -63,10 +63,6 @@ $count_public_item: 4;
 	color: #000;
 }
 
-.popular_publications_btn {
-	@extend %popular_public_btn;
-}
-
 .popular_publications_list {
 	display: flex;
 	flex-wrap: wrap;

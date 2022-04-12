@@ -1,0 +1,14 @@
+mixin resources(array)
+	ul.recommended_resources_list
+		each item in array
+			li.recommended_resources_item 
+				a(href='#').recommended_resources_item__link
+					
+					.recomended_resources_item__text_wrap
+						.recommended_resources_item__title
+							each word, index in item.title
+								span(class= `${item.accent_num === index + 1 ? 'accent' : ''}`)= item.title.length !== index + 1 ? word + ' ' : word
+						.recommended_resources_item__subtitle= item.subtitle
+					
+					.recommended_resources_item__icon_wrap
+						+icon('arrow_2')

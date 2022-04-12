@@ -10,11 +10,14 @@ doctype
 html(lang="en")
 	head
 		+head(array)
+
 	body(class= array.body_class)
 		include  ../blocks/_header
 		
 		.wrapper(class= array.layout_mod)
 			.base(class= array.layout_mod)
 				block content_block
-			+footer
+
+			include  ../blocks/_footer
+
 		block local_popup

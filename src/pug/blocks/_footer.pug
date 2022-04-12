@@ -1,0 +1,33 @@
+footer.footer
+	.footer_top_line
+	
+	.section_in
+
+		.footer_top_wrapper
+			.footer_logo_w
+				a(href="#").footer_logo_link: +icon('logo_footer')
+			.footer_brands_w
+				h3.brands_title A collaboration of
+				+brands({
+					gl_class: 'brands',
+					items: [{img: 'logo_unaids'}, {img: 'logo_unicef'}, {img: 'logo_world_health'}, {img: 'logo_unaids'}, {img: 'logo_unicef'}]
+				})
+
+
+		.footer_middle_wrapper
+			+menu({ 
+				gl_class: 'footer_menu', 
+				items: [{ title: 'About'}, { title: 'Contact'}, { title: 'Portfolio'}, { title: 'Address'}, { title: 'About'}, { title: 'Contact'}],
+			})
+			+social({ 
+				mod_block: 'footer_social_list', 
+				items: [{ name_icon: 'i_facebook'}, { name_icon: 'i_twitter'}, { name_icon: 'i_instagram'}, { name_icon: 'i_instagram'}, { name_icon: 'i_instagram'}, { name_icon: 'i_instagram'}],
+			})
+
+
+		.footer_bottom_wrapper
+			.footer_copyright Copyright © 2020 <span>UNAIDS</span>
+			+menu({ 
+				gl_class: 'footer_links', 
+				items: [{ title: 'Report fraud'}, { title: 'Scam alert'}, { title: 'Terms of use'}],
+			})

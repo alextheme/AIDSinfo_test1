@@ -10,6 +10,10 @@
 	@include bp($point_1) {
 		--gl-indent: 1rem;
 	}
+
+	@include bp($point_3) {
+		--height-footer: 31rem;
+	}
 }
 
 html {
