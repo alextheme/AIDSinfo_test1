@@ -54,7 +54,6 @@ const selectTwo = () => {
 };
 
 const searchElement = () => {
-	let isEmptyInputField = true;
 	const closeButton = $('.search_block_close_btn');
 	const searchButton = $('.header_mobile_search_btn');
 
