@@ -132,7 +132,7 @@ $gap_resource_item: 8rem;
 		fill: $color_bg_mobile_menu;
 	}
 
-	@include bp($point_4) {
+	@include bp($point_3) {
 		display: none;
 	}
 }
