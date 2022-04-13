@@ -53,7 +53,7 @@ const selectTwo = () => {
 	});
 };
 
-const searchElement = () => {
+const showSearchElement = () => {
 	const closeButton = $('.search_block_close_btn');
 	const searchButton = $('.header_mobile_search_btn');
 
@@ -70,11 +70,7 @@ const header = () => {
 	selectLanguage();
 	triggerMenu();
 	selectTwo();
-	searchElement();
-
-	// new WOW().init();
+	showSearchElement();
 };
 
 export { header };
-
-
