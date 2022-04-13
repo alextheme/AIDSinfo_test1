@@ -55,25 +55,15 @@ const selectTwo = () => {
 
 const searchElement = () => {
 	let isEmptyInputField = true;
-	const inputSearch = $('.header_mobile_search_input');
+	const closeButton = $('.search_block_close_btn');
 	const searchButton = $('.header_mobile_search_btn');
 
+	closeButton.on('click', (e) => {
+		$('.search_section').toggleClass('open_search_block_mobile');
+	});
+
 	searchButton.on('click', (e) => {
-		if (isEmptyInputField) {
-			inputSearch.toggleClass('search_show');
-		} else {
-			console.log('go search ...');
-		}
-	});
-
-	inputSearch.on('input', (e) => {
-		isEmptyInputField = !e.target.value;
-	});
-
-	inputSearch.on('blur', () => {
-		if (isEmptyInputField) {
-			inputSearch.removeClass('search_show');
-		}
+		$('.search_section').toggleClass('open_search_block_mobile');
 	});
 };
 

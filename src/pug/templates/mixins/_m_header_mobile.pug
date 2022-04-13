@@ -5,8 +5,8 @@ mixin header_mobile({ nav, menu, language })
 				.header_top_line
 				a.header_mobile_logo(href= "#"): +icon('logo')
 				.header_mobile_search_w
-					input.header_mobile_search_input(type= 'search' placeholder= 'search on site')
-					button.header_mobile_search_btn: +icon('search')
+					button.header_mobile_search_btn
+						+icon('search')
 
 				.menu_trigger.menuTrigger
 					span.menu_trigger_decor

@@ -64,23 +64,7 @@
 		height: 100%;
 		
 		margin: 0 2rem;
-	}
-	.header_mobile_search_input {
-    font-family: 'Avenir';
-		font-size: 1.8rem;
-		line-height: 1.8rem;
-
-		width: 100%;
-    height: calc(var(--height-header-mobile) / 2);
-    
-		padding-right: calc(var(--height-header-mobile) / 1.4);
-    padding-left: 1rem;
-		margin-top: -10rem;
-    
-		border-radius: 3rem;
-    border: 1px solid $color_text_2;
-
-		transition: all .3s ease-in-out;
+		margin-left: auto;
 	}
 
 	.header_mobile_search_btn {
