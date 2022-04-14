@@ -1,20 +1,11 @@
 $gap_public_item: 2rem;
 $count_public_item: 4;
 
-// MIXIN
-@mixin bp_item_public($point, $count_item) {
-	@include bp($point) {
-		width: calc((100% - $gap_public_item * ($count_item - 1)) / $count_item) !important;
-
-		@include each(1) {
-			margin-right: $gap_public_item !important;
-		}
-
-		@include each($count_item) {
-			margin-right: 0 !important;
-		}
-	}
+// ------------------------------------------ function
+@function width_element($count_item) {
+	@return calc((100% - $gap_public_item * ($count_item - 1)) / $count_item);
 }
+// ------------------------------------------ function###
 
 // STYLES
 .popular_publications {
@@ -76,9 +67,23 @@ $count_public_item: 4;
 	margin-bottom: $gap_public_item;
 
 	@include each($count_public_item) { margin-right: 0;}
-	@include bp_item_public($point_3, 3);
-	@include bp_item_public($point_4, 2);
-	@include bp_item_public($point_6, 1);
+
+	@include bp($point_3) {
+		width: width_element(3);
+		@include each(1) { margin-right: $gap_public_item; }
+		@include each(3) { margin-right: 0; }
+	}
+
+	@include bp($point_4) {
+		width: width_element(2);
+		@include odd() { margin-right: $gap_public_item; }
+		@include even() { margin-right: 0; }
+	}
+	
+	@include bp($point_6) {
+		width: 100%;
+		@include odd() { margin-right: 0; }
+	}
 }
 
 .popular_publications_link,
