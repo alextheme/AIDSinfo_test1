@@ -81,8 +81,8 @@ $count_public_item: 4;
 	}
 	
 	@include bp($point_6) {
-		width: 100%;
-		@include odd() { margin-right: 0; }
+		width: 100% !important;
+		@include odd() { margin-right: 0 !important; }
 	}
 }
 
