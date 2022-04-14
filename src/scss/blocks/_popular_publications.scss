@@ -4,14 +4,14 @@ $count_public_item: 4;
 // MIXIN
 @mixin bp_item_public($point, $count_item) {
 	@include bp($point) {
-		width: calc((100% - $gap_public_item * ($count_item - 1)) / $count_item);
+		width: calc((100% - $gap_public_item * ($count_item - 1)) / $count_item) !important;
 
 		@include each(1) {
-			margin-right: $gap_public_item;
+			margin-right: $gap_public_item !important;
 		}
 
 		@include each($count_item) {
-			margin-right: 0;
+			margin-right: 0 !important;
 		}
 	}
 }
