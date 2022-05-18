@@ -1,22 +1,7 @@
-# Welcome to glivera-webpack-boilerplate
+# AIDSinfo_test1
 
-## Get started
+[site published by this link](https://alextheme.github.io/AIDSinfo_test1/)
 
-1. Install [node.js](https://nodejs.org/)
+preview page
 
-2. If Windows
-
-Install cross-env global
-
-`npm i cross-env -g`
-
-3. Install npm packages
-
-`npm i` or `npm ci`
-
-4. Let's code!
-
-* `npm run dev` -  File watching + server
-* `npm run dev-build` - Build (development mode) + file watching 
-* `npm run build` - Build (production mode)
-* `npm run wp_build` - Copies the files (css/js/fonts/static) to wp_theme directory
+![Image alt](https://github.com/alextheme/Recent_posts_test3/blob/master/helpers/preview.png?raw=true "example page")
