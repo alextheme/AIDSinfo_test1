@@ -8,3 +8,42 @@
 %title_offset {
 	margin-bottom: 2rem;
 }
+
+// -------------------------------------------- albor
+
+
+%font_avenir_light {
+	font-family: $font_1;
+	font-weight: 300;
+}
+
+%font_avenir_roman {
+	font-family: $font_1;
+	font-weight: 400;
+}
+
+%font_nav_style {
+	@extend %font_avenir_roman;
+
+	text-transform: uppercase;
+}
+
+%font_menu_mobile {
+	@extend %font_avenir_roman;
+
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.13636rem;
+	white-space: nowrap;
+}
+
+%font_title_s {
+	@extend %font_avenir_roman;
+
+	font-size: 2.4rem;
+	line-height: 2.6rem;
+	text-transform: uppercase;
+
+	color: $black;
+}
+

@@ -1,9 +1,8 @@
-mixin search(array, add_class)
-	- add_class = add_class || ''
-	ul.search_popular_queries__list(class=add_class)
+mixin search(array)
+	ul.search_popular__list
 		each item in array		
-			li.search_popular_queries__item.last_two_opacity
-				.search_popular_queries__arrow_w
-					+icon('arrow_2')
-				.search_popular_queries__text= item.text
-				.search_popular_queries__region= item.region
+			li.search_popular__item
+				.search_popular__arrow_w
+					+icon('arrow_2', 'icon--size_mod')
+				.search_popular__text= item.text
+				.search_popular__region= item.region

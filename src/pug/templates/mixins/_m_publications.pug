@@ -1,18 +1,16 @@
 mixin publications(array, add_class)
 	- add_class = add_class || ''
-	ul.popular_publications_list 
+	ul.publications__list 
 		each item in array
-			li.popular_publications_item 
-				a.popular_publications_link(href=`${item.href}`)
+			li.publications__item 
+				a.publications__link(href=`${item.href}`)
 					+picture({
 						typeJpeg: false,
 						png: false,
-						media: 768,
 						is2x: false,
 						contain: true,
-						class: 'bg_link',
-						img: `${item.img}`,
-						img_mob: `${item.img_mob}`
+						class: 'publications__image_wrapper',
+						img: `${item.img}`
 					})
 
 		

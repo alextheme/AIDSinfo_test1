@@ -1,25 +1,39 @@
 //---------------------------------------------mobile language
+@mixin color_menu_mobile {	
+	@include bp($point_2, min) {
+		color: $grey;
+	}
 
-.font_languge_select {
-	font-size: 1rem;
-	text-transform: uppercase;
-	letter-spacing: 0.13636rem;
-	white-space: nowrap;
-
-	color: $color_text_2;
-	overflow: hidden;
+	@include bp($point_3) {
+		color: $white;
+	}
 }
 
 .select2-container span {
-	@extend .font_languge_select;
+	@extend %font_menu_mobile;
+
+	overflow: hidden;
+	
+	@include color_menu_mobile;
 }
 
 .select2-container--default .select2-selection--single {
 	border: none;
+	background: transparent;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-	@extend .font_languge_select;
+	@extend %font_menu_mobile;
+	
+	overflow: hidden;
+
+	@include color_menu_mobile;
+}
+
+.select2-results__option.select2-results__option--selectable {
+	@include bp($point_3) {
+		color: $grey;
+	}
 }
 
 .select2-container .select2-selection--single .select2-selection__rendered {
@@ -45,26 +59,45 @@
 	transform: rotate(45deg) translate(-5px, -50%);
 	
 	border-width: .1rem;
-	border-color: #808284;
-	border-top: #808284;
-	border-left: #808284;
+
+	@include bp($point_2, min) {
+		border-color: $grey;
+		border-top: $grey;
+		border-left: $grey;
+	}
+
+	@include bp($point_3) {
+		border-color: $white;
+		border-top: $white;
+		border-left: $white;
+	}
 }
 
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
-	border-color: $color_text_2;
 	border-width: .1rem;
 	transform: rotate(225deg) translate(5px, 50%);
+
+	@include bp($point_2, min) {
+		border-color: $grey;
+	}
+
+	@include bp($point_3) {
+		border-color: $white;
+	}
 }
 
 .select2-results__option--selectable {
-	@extend .font_languge_select;
+	@extend %font_menu_mobile;
+
+	overflow: hidden;
 }
 
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-	@extend .font_languge_select;
+	@extend %font_menu_mobile;
 
 	background-color: $color_accent;
 	color: white;
+	overflow: hidden;
 }
 
 .select2-container--open .select2-dropdown--below {

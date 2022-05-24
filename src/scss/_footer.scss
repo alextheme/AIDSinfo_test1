@@ -27,18 +27,20 @@
 .footer_middle_wrapper,
 .footer_bottom_wrapper {
 	width: 100%;
-	padding: 0 var(--gl-indent);
 }
 
 // ---------------------------------------------- footer top
+
+.footer_top {
+	padding: 0 1rem;
+	background-color: $white;
+}
 
 .footer_top_wrapper {
 	display: flex;
 	align-items: center;
 
 	min-height: 10rem;
-
-	background-color: $white;
 
 	@include bp($point_3) {
 		justify-content: center;
@@ -50,7 +52,7 @@
 	}
 }
 
-.footer_logo_w {
+.footer_icon_w {
 	width: 10.2rem;
 	height: 2rem;
 
@@ -122,14 +124,17 @@
 
 // ---------------------------------------------- footer middle
 
+.footer_middle {
+	padding: 0 1rem;
+	background-color: $footer_light_grey;
+}
+
 .footer_middle_wrapper {
 	display: flex;
 	align-items: center;
 
 	width: 100%;
 	min-height: 8rem;
-
-	background-color: $color_bg_footer_1;
 
 	@include bp($point_3) {
 		flex-direction: column;
@@ -156,6 +161,12 @@
 
 	margin-right: 6rem;
 
+	@include bp($point_2, min) {
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
 	@include bp($point_3) {
 		margin-left: 2.4rem;
 		margin-right: 2.4rem;
@@ -163,6 +174,8 @@
 }
 
 .footer_menu__link {
+	@extend %font_nav_style;
+		
 	font-size: 1.3rem;
 	line-height: 2.2rem;
 	font-weight: 400;
@@ -210,6 +223,11 @@
 // ---------------------------------------------- footer middle###
 
 // ---------------------------------------------- footer bottom
+.footer_bottom {
+	padding: 0 1rem;
+	background-color: $footer_grey;
+}
+
 .footer_bottom_wrapper {
 	display: flex;
 	align-items: center;
@@ -220,8 +238,6 @@
 
 	width: 100%;
 	min-height: 5rem;
-
-	background-color: $color_bg_footer_2;
 
 	@include bp($point_3) {
 		flex-direction: column;

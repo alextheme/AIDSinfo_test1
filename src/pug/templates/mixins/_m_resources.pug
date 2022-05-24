@@ -1,14 +1,12 @@
 mixin resources(array)
-	ul.recommended_resources_list
+	ul.resources__list
 		each item in array
-			li.recommended_resources_item 
-				a(href='#').recommended_resources_item__link
+			li.resources__item 
+				a(href='#').resources__item_link
 					
-					.recomended_resources_item__text_wrap
-						.recommended_resources_item__title
-							each word, index in item.title
-								span(class= `${item.accent_num === index + 1 ? 'accent' : ''}`)= item.title.length !== index + 1 ? word + ' ' : word
-						.recommended_resources_item__subtitle= item.subtitle
+					.resources__item_text_wrap
+						.resources__item_title!= item.title
+						.resources__item_subtitle= item.subtitle
 					
-					.recommended_resources_item__icon_wrap
-						+icon('arrow_2')
+					.resources__item_icon_w
+						+icon('arrow_2', 'icon--size_mod')

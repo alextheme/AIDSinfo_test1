@@ -40,57 +40,67 @@
 	border-radius: $gl_radius;
 }
 
-%btn_wiev_more_queries {
+//------------------------------------------brmsk
+%button_wiev_more {
 	@extend %transition_all;
+	@extend %font_avenir_roman;
+
 	position: relative;
 
 	display: flex;
+	align-items: center;
 
-	width: 11.2rem;
+	width: 11.4rem;
+	height: 3rem;
 
 	font-size: 1.3rem;
-	font-weight: 400;
 	letter-spacing: 0.13636rem;
 	text-transform: uppercase;
 
 	cursor: pointer;
 	color: $white;
 
-	margin: 0 auto;
-
 	&::before {
+		@extend %transition_all;
+
 		position: absolute;
-		top: 0;
+		top: 50%;
 		right: 0;
+		
 		content: '';
+		
 		width: 10px;
 		height: 10px;
 
-		border-bottom: 1px solid rgb(255, 255, 255, 0.5);
-		border-right: 1px solid rgb(255, 255, 255, 0.5);
+		border-bottom: 1px solid $white;
+		border-right: 1px solid $white;
 
-		transform: rotate(45deg);
+		transform: rotate(45deg) translate(-40%, -40%);
 	}
 
 	&:hover {
-		@extend %transition_all;
-
 		color: darken($white, 20%);
+
+		&::before {
+			border-color: darken($white, 20%);
+		}
+	}
+
+	&.active_mod::before {
+	 	transform: rotate(-135deg) translate(20%, 20%);
 	}
 }
 
-%popular_public_btn {
+%wiev_all_btn {
 	@extend %transition_opacity;
-
-	font-size: 1.5rem;
+	@extend %font_avenir_roman;
+	
 	line-height: 2.3rem;
-	font-weight: 400;
-	letter-spacing: .06667rem;
 	text-transform: uppercase;
 	
 	margin-left: auto;
 	
-	color: #000;
+	color: $color_text_base;
 	cursor: pointer;
 
 	&:hover {
@@ -98,14 +108,21 @@
 		opacity: .5;
 	}
 
+	@include bp($point_2, min) {
+		font-size: 1.5rem;
+		letter-spacing: .066rem;
+	}
+	
 	@include bp($point_3) {
 		position: absolute;
 		bottom: 0;
 		right: 0;
 
-		font-size: 1.2rem;
-
 		margin-right: var(--gl-indent);
     margin-bottom: calc(-2 * var(--gl-indent));
+		
+		font-size: 1.2rem;
+		letter-spacing: .083rem;
 	}
 }
+

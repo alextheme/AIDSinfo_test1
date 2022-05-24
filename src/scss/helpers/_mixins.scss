@@ -1,6 +1,5 @@
 @use "sass:math";
 
-
 @function z-index($key) {
 	@return map-get($z-index, $key);
 }

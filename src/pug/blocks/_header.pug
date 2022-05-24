@@ -1,16 +1,42 @@
-mixin header({ nav, menu, language })
-	+header_desctop({ nav, menu, language })
-	+header_mobile({ nav, menu, language })
-	
-+header({
-	nav: [
-		{ title: 'Fact sheets'},
-		{ title: 'Epidemic & response'},
-		{ title: 'key populations'},
-		{ title: 'finance'},
-		{ title: 'law & policies'},
-	],
-	menu: [{ title: 'Indicators catalogue'}, { title: 'report builder'}],
-	language: ['English', 'Deutsch', 'Ukrainian', 'Polish', 'Español', 'Italiano', 'Nederlandse'],
-})
+header.header
+	.header__top_line
+
+	.header_wrapper.section_in
+		a(href="#").heder__logo_link
+			.header__logo_icon_w
+				+icon('logo', 'icon--size_mod')
+			span.header_logo__description Global dataset on HIV epidemiology and response
+		
+		button.header__search_btn
+			.header__search_icon_w
+				+icon('search', 'icon--size_mod')
+
+		button.header__menu_trigger_btn.menuTrigger
+			.header__menu_trigger_icon_w
+				.menu_trigger_icon
+					span.menu_trigger_decor
+
+		.header__navigation_box
+			nav.header__nav
+				+menu({
+					gl_mod: 'animate_mod wow animate__fadeInLeft',
+					gl_class: 'header__nav', 
+					items: [
+						{ title: 'Fact sheets'},
+						{ title: 'Epidemic & response'},
+						{ title: 'key populations'},
+						{ title: 'finance'},
+						{ title: 'law & policies'},
+					],
+				})
+
+			.heder__menu_w
+				+menu({ 
+					gl_class: 'heder__menu', 
+					items: [{ title: 'Indicators catalogue'}, { title: 'report builder'}],
+				})
+
+				.header__language
+					.header__language_wrap
+						+select_language({ gl_class: 'header__language', language: ['English', 'Deutsch', 'Ukrainian', 'Polish', 'Español', 'Italiano', 'Nederlandse'], })
 

@@ -59,7 +59,7 @@ var animationArray = [],
 // on document ready init your animation blocks/sections
 $animationSection = $('.animationSection');
 
-// define function for creating animation array 
+// define function for creating animation array
 function createAnimationArray() {
 	$animationSection.each(function (index, element) {
 		var section = new AnimationSection($(this));
@@ -81,6 +81,7 @@ function AnimationSection(section) {
 
 
 // define function to play animation
+// Определите функцию для воспроизведения анимации
 function playAnimation(position, version) {
 	if (animationArray.length) {
 		animationArray.forEach(function (item) {

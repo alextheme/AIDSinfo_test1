@@ -1,14 +1,14 @@
 // ------------------- imports
 import $ from 'jquery';
 import { GLOBAL_VARS } from 'utils/constants';
-import { documentReady, pageLoad } from 'utils';
+import { documentReady,	pageLoad } from 'utils';
 import pageWidgetInit from './dev_vendors/dev_widget';
 // ------------------- imports###
 
 // ------------------  import components
-import { documentListeners } from './components/documentListeners';
 import { header } from './components/header';
 import { slider } from './components/slider';
+import { search } from './components/search';
 // ------------------  import components###
 
 // // ------------------  import libs
@@ -37,9 +37,9 @@ const readyFunc = () => {
 };
 
 const loadFunc = () => {
-	documentListeners();
 	header(GLOBAL_VARS);
 	slider(GLOBAL_VARS);
+	search(GLOBAL_VARS);
 };
 
 documentReady(() => {

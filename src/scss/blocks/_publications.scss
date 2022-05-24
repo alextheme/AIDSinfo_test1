@@ -1,0 +1,126 @@
+$gap: 2rem;
+$picture_size_ratio: 30.6rem / 43rem;
+
+// ------------------------------------------ function
+@function width_item($count, $indent) {
+	@return calc((100% - ($count - 1) * $indent) / $count);
+}
+// ------------------------------------------ function###
+
+// STYLES
+.publications {
+	padding: 0 1rem;
+	margin-bottom: calc(10rem - $gap);
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		content: '';
+		width: 100%;
+		height: 60%;
+
+		background: $light_grey;
+	}
+
+	@include bp($point_3) {
+		margin-bottom: calc(9rem - $gap);
+	}
+}
+
+.publications_wrapper {
+	position: relative;
+	z-index: 2;
+}
+
+.publications__header {
+	display: flex;
+}
+
+.publications__title {
+	@extend %font_title_s;
+
+	margin-top: 4rem;
+	margin-bottom: 3.4rem;
+	
+	line-height: 2.6rem;
+
+	@include bp($point_4, min) {
+		font-size: 2.4rem;
+	}
+	
+	@include bp($point_4) {
+		font-size: 1.6rem;
+	}
+}
+
+.publications__list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.publications__item {
+	height: auto;
+	margin: 0 $gap $gap 0;
+	
+	@include bp($point_2, min) {
+		width: width_item(4, $gap);
+		
+		@include each(4) { margin-right: 0;}
+	}
+
+	@include bp($point_3) {
+		@include bp($point_4, min) {
+			width: width_item(3, $gap);
+
+			@include each(3) { margin-right: 0; }
+		}
+	}
+
+	@include bp($point_4) {
+		@include bp($point_8, min) {
+			width: width_item(2, $gap);
+		
+			@include odd() { margin-right: $gap; }
+			@include even() { margin-right: 0; }
+		}
+	}
+	
+	@include bp($point_8) {
+		width: width_item(1, $gap);
+		
+		@include each(1) { margin-right: 0; }
+	}
+}
+
+.publications__link {
+	@extend %transition_transform;
+	
+	position: relative;
+
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	padding-top: calc(100% / $picture_size_ratio);
+
+	&:hover {
+		transform: scale(1.06);
+	}
+}
+
+.publications__image_wrapper {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	
+	width: 100%;
+	height: 100%;
+}
+
+.publications__link .contain_img,
+.publications__link .cover_img {
+	width: 100%;
+}

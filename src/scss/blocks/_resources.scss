@@ -1,37 +1,42 @@
 $count_resource_item: 2;
 $gap_resource_item: 8rem;
 
-.recommended_resources_section {
+.resources {
 	margin-bottom: 1rem;
+	padding: 0 1rem;
+
+	background-color: $white;
 }
 
-.recommended_resources_title {
-	font-size: 2.4rem;
-	font-weight: 400;
-	line-height: 2.6rem;
-	text-transform: uppercase;
-
-	padding: 0 var(--gl-indent);
+.resources__title {
+	@extend %font_title_s;
+	
 	margin-bottom: 4rem;
 
-	color: $color_text_base;
+	line-height: 2.6rem;
+
+	@include bp($point_4, min) {
+		font-size: 2.4rem;
+	}
+	
+	@include bp($point_4) {
+		font-size: 1.6rem;
+	}
 }
 
-.recommended_resources_list {
+.resources__list {
 	display: flex;
 	flex-wrap: wrap;
-
-	padding: 0 var(--gl-indent);
 }
 
-.recommended_resources_item {
+.resources__item {
 	width: calc((100% - $gap_resource_item) / $count_resource_item);
 	min-height: 9.5rem;
 
 	margin-right: $gap_resource_item;
 	margin-bottom: 3.3rem;
 
-	border-bottom: 1px solid $color_border_bottom;
+	border-bottom: 1px solid $color_light_grey;
 
 	@include each($count_resource_item) {
 		margin-right: 0;
@@ -48,7 +53,7 @@ $gap_resource_item: 8rem;
 		@include each(1) {
 			margin-right: 0;
 			margin-bottom: 3.3rem;
-			border-bottom: 1px solid $color_border_bottom;
+			border-bottom: 1px solid $color_light_grey;
 		}
 
 		@include last(1) {
@@ -58,7 +63,7 @@ $gap_resource_item: 8rem;
 	}
 }
 
-.recommended_resources_item__link {
+.resources__item_link {
 	@extend %transition_all;
 
 	display: flex;
@@ -71,10 +76,9 @@ $gap_resource_item: 8rem;
 
 		opacity: .5;
 
-		.recommended_resources_item__icon_wrap {
+		.resources__item_icon_w {
 			animation-name: move_arrow;
-			animation-duration: 1s;
-			animation-iteration-count: infinite;
+			animation-duration: 2s;
 		}
 	}
 
@@ -91,7 +95,7 @@ $gap_resource_item: 8rem;
 	}
 }
 
-.recomended_resources_item__text_wrap {
+.resources__item_text_wrap {
 	margin-right: 2rem;
 
 	@include bp($point_4) {
@@ -99,29 +103,47 @@ $gap_resource_item: 8rem;
 	}
 }
 
-.recommended_resources_item__title {
-	font-size: 2.8rem;
-	font-weight: 400;
+.resources__item_title {
+	@extend %font_avenir_light;
+
 	line-height: 2.8rem;
 
 	margin-bottom: .6rem;
 
-	color: $color_text_base;
+	color: $black;
 
-	.accent {
+	span {
 		color: $color_accent;
+	}
+
+	@include bp($point_4, min) {
+		font-size: 2.8rem;
+	}
+
+	@include bp($point_4) {
+		font-size: 2rem;
 	}
 }
 
-.recommended_resources_item__subtitle {
-	font-size: 1.5rem;
-	font-weight: 400;
+.resources__item_subtitle {
+	@extend %font_avenir_roman;
+
+	margin-bottom: 3.3rem;
+	
 	line-height: 2.3rem;
 
-	color: $color_text_1;
+	color: $color_text_base;
+
+	@include bp($point_4, min) {
+		font-size: 1.5rem;
+	}
+
+	@include bp($point_4) {
+		font-size: 1.2rem;
+	}
 }
 
-.recommended_resources_item__icon_wrap {
+.resources__item_icon_w {
 	width: 1.8rem;
 	height: 1rem;
 
@@ -129,7 +151,7 @@ $gap_resource_item: 8rem;
 	margin-top: 2.2rem;
 
 	.icon_arrow_2 {
-		fill: $color_bg_mobile_menu;
+		fill: $color_accent;
 	}
 
 	@include bp($point_3) {

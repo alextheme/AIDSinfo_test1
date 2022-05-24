@@ -47,7 +47,7 @@ const triggerMenu = () => {
 const selectTwo = () => {
 	$('.languageSelect').select2({
 		minimumResultsForSearch: Infinity,
-		width: '8rem',
+		width: '9rem',
 		selectionCssClass: 'header_mobile--mobile_lang_btn_mod',
 		dropdownCssClass: 'header_mobile--mobile_lang_list_mod',
 	});
@@ -58,11 +58,11 @@ const showSearchElement = () => {
 	const searchButton = $('.header_mobile_search_btn');
 
 	closeButton.on('click', (e) => {
-		$('.search_section').toggleClass('open_search_block_mobile');
+		$('.section_search').toggleClass('open_search_block_mobile');
 	});
 
 	searchButton.on('click', (e) => {
-		$('.search_section').toggleClass('open_search_block_mobile');
+		$('.section_search').toggleClass('open_search_block_mobile');
 	});
 };
 

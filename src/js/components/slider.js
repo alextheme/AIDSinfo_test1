@@ -1,41 +1,79 @@
 import '../plugins/slick/slick.min';
+import { onWindowResize,	getWindowSize } from 'utils';
 
-const slider = (params) => {
-	const slickCurrent = 'slick-current';
-	const slickActive = 'slick-active';
-	const slickAnimation = 'slick-animation';
+/** variable */
+let $currentElement = null;
+let isMouseOverSlider = false;
+let animate = true;
+let isMobile = true;
 
-	const sliderList = $('.slider_list');
-	const sliderItems = $('.slider_item');
+/**
+ * Get data-slick-index value
+ * @param {HTMLElement | jQuery<HTMLElement>} elem HTMLElement
+ * @returns number
+ */
+const getDataSlickIndex = (elem) => {
+	try {
+		return +elem.parentNode.getAttribute('data-slick-index');
+	} catch {
+		return +$(elem).attr('data-slick-index');
+	}
+};
 
+/**
+ * Get next index slider element
+ * @param {HTMLElement | jQuery<HTMLElement>} elem
+ * @returns number
+ */
+const getNextIndex = (elem, numberElements) => {
+	const indexElem = getDataSlickIndex(elem);
+	return indexElem === numberElements - 1 ? 0 : indexElem + 1;
+};
+
+/**
+ * Removes the class from all elements and adds to the current one
+ * @param {jQuery<HTMLElement>} sliderItems jQuery slider items elements
+ * @param {jQuery<HTMLElement>} item jQuery item
+ */
+const makeAnimation = (sliderItems, item, className) => {
+	// Condition for the prevention of twitching during animation
+	if (animate) {
+		animate = false;
+		sliderItems.removeClass(className);
+		item.addClass(className);
+
+		// pause to prevent twitch during animation
+		setTimeout(() => {
+			animate = true;
+		}, 100);
+	}
+};
+
+/**
+ * Auto play interva
+ * @param {jQuery<HTMLElement>} sliderItems collections elemens
+ */
+const autoPlayAccordionSlider = (sliderItems, className, pause, numberElements) => {
+	setInterval(() => {
+		if (!isMobile && !isMouseOverSlider) {
+			$currentElement = $(sliderItems[getNextIndex($currentElement, numberElements)]).addClass(className);
+			makeAnimation(sliderItems, $currentElement, className);
+		}
+	}, pause);
+};
+
+/**
+ * Main method
+ * @param {object variables} GLOBAL_VARS
+ */
+const slider = (GLOBAL_VARS) => {
+	const currClassName = 'slick-current';
+	const $sliderItems = $('.slider_item');
+	const accordeonPause = 2000;
 	const elementsToShow = 5;
-	const accordeonSpeed = 1500;
-	let animationProcess = true;
-	let indexElem = 0; // get in class name 'item1, item2, ...'
 
-	// interval show sliders
-	const autoPlayAccordionSlider = () => {
-		const runInterval = () => {
-			return setInterval(() => {
-				sliderItems.removeClass(slickCurrent);
-				$(sliderItems[indexElem % elementsToShow]).addClass(slickCurrent);
-				indexElem += 1;
-			}, accordeonSpeed);
-		};
-
-		let refreshIntervalId = runInterval();
-
-		sliderList.on('mouseover', (e) => {
-			clearInterval(refreshIntervalId);
-		});
-		sliderList.on('mouseleave', (e) => {
-			refreshIntervalId = runInterval();
-		});
-	};
-
-	$(sliderItems[indexElem]).addClass(slickCurrent);
-
-	sliderList.slick({
+	// slick-slider
+	$('.slider__list').slick({
 		arrows: false,
 		dots: false,
 		slidesToShow: elementsToShow,
@@ -48,7 +86,7 @@ const slider = (params) => {
 					infinite: true,
 					dots: true,
 					slidesToShow: 1,
-					speed: 300,
+					speed: 500,
 					// autoplay: true,
 					adaptiveHeight: false,
 					variableWidth: false,
@@ -57,34 +95,32 @@ const slider = (params) => {
 		],
 	});
 
-	let windowWidth = window.innerWidth;
+	isMobile = getWindowSize().windowWidth < GLOBAL_VARS.mediaPoint1;
 
-	$(window).on('resize', () => {
-		windowWidth = window.innerWidth;
+	onWindowResize(() => {
+		isMobile = getWindowSize().windowWidth < GLOBAL_VARS.mediaPoint1;
 	});
 
-	if (windowWidth > 1023) {
-		sliderItems.on('mouseover', (e) => {
-			if (e.target.closest('.slider_item_link')) return;
+	$currentElement = $($sliderItems[0]);
 
-			const $this = $(e.currentTarget);
+	// auto play accordion
+	autoPlayAccordionSlider($sliderItems, currClassName, accordeonPause, elementsToShow);
 
-			// autoPlayAccordionSlider();
-			// get element index from class name.
-			// example 'class == item12, index == 12'
-			indexElem = +$this.attr('class').match(/item+\d/)[0].substring(4);
+	// the mouse is over the slider
+	$('.section.slider').on('mouseover', () => { isMouseOverSlider = true; });
+	$('.section.slider').on('mouseout', () => { isMouseOverSlider = false; });
 
-			if (animationProcess) {
-				animationProcess = false;
-				sliderItems.removeClass(slickCurrent).removeClass(slickActive).addClass(slickActive);
-				$this.addClass(slickCurrent);
+	$('.section.slider').on('mousemove', (event) => {
+		if (isMobile) return;
+
+		const elementsUnderTheMouse = document.elementsFromPoint(event.clientX, event.clientY);
+
+		$(elementsUnderTheMouse).each((_, item) => {
+			if ($(item).hasClass('slider_item')) {
+				makeAnimation($sliderItems, $(item), currClassName);
 			}
-
-			setTimeout(() => {
-				animationProcess = true;
-			}, 10);
 		});
-	}
+	});
 };
 
 export { slider };

@@ -1,7 +1,7 @@
-.button_wiev_more_queries {
-	@extend %btn_wiev_more_queries;
-}
+.btn_wiev_more {
+	@extend %button_wiev_more;
+}	
 
-.popular_publications_btn {
-	@extend %popular_public_btn;
+.publications__btn {
+	@extend %wiev_all_btn;
 }

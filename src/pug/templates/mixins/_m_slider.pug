@@ -1,25 +1,26 @@
 mixin slider(data)
-	.slider_header_block
-		.slider_title= data.title
-		.slider_description= data.description
+	section.section.slider
+		.slider__header
+			.section_in
+				.slider__title= data.title
+				.slider__description= data.description
 
-	ul.slider_list
-		each item, index in data.items
-			li(class= `slider_item item${index + 1}`)
-				+picture({
-					typeJpeg: false,
-					png: false,
-					media: 768,
-					is2x: false,
-					contain: true,
-					class: 'picture_bg_w',
-					img: item.bg,
-					img_mob: item.bg
-				})
-				.slider_item_text_block
-					.slider_item_title= item.title
-					.slider_item_description= item.descr
-					a(href='#').slider_item_link
-						+icon('arrow_2')
+		ul.slider__list
+			each item, index in data.items
+				li(class= `slider_item`)
+					+picture({
+						typeJpeg: false,
+						png: false,
+						is2x: false,
+						contain: true,
+						class: 'slicer_item__picture_bg_w',
+						img: item.bg,
+					})
+					.slider_item__text_w
+						.slider_item__title= item.title
+						.slider_item__description= item.descr
+						a(href='#').slider_item__link
+							.slider_item__icon_w
+								+icon('arrow_2', 'icon--size_mod')
 
 
