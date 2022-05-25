@@ -3,7 +3,7 @@ $picture_size_ratio: 30.6rem / 43rem;
 
 // ------------------------------------------ function
 @function width_item($count, $indent) {
-	@return calc((100% - ($count - 1) * $indent) / $count);
+	@return calc(100% / $count);
 }
 // ------------------------------------------ function###
 
@@ -58,39 +58,32 @@ $picture_size_ratio: 30.6rem / 43rem;
 .publications__list {
 	display: flex;
 	flex-wrap: wrap;
+
+	margin: -1rem;
 }
 
 .publications__item {
 	height: auto;
-	margin: 0 $gap $gap 0;
+	padding: 1rem;
 	
 	@include bp($point_2, min) {
 		width: width_item(4, $gap);
-		
-		@include each(4) { margin-right: 0;}
 	}
 
 	@include bp($point_3) {
 		@include bp($point_4, min) {
 			width: width_item(3, $gap);
-
-			@include each(3) { margin-right: 0; }
 		}
 	}
 
 	@include bp($point_4) {
 		@include bp($point_8, min) {
 			width: width_item(2, $gap);
-		
-			@include odd() { margin-right: $gap; }
-			@include even() { margin-right: 0; }
 		}
 	}
 	
 	@include bp($point_8) {
 		width: width_item(1, $gap);
-		
-		@include each(1) { margin-right: 0; }
 	}
 }
 
