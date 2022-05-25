@@ -40,7 +40,9 @@
 	display: flex;
 	align-items: center;
 
-	min-height: 10rem;
+	@include bp($point_2, min) {
+		min-height: 10rem;
+	}
 
 	@include bp($point_3) {
 		justify-content: center;
@@ -65,7 +67,9 @@
 	display: flex;
 	align-items: center;
 
-	margin-left: auto;
+	@include bp($point_2, min) {
+		margin-left: auto;
+	}
 
 	@include bp($point_3) {
 		margin-left: 0;
@@ -94,12 +98,14 @@
 		align-items: center;
 		justify-content: center;
 
-		width: 11rem;
-		height: 4rem;
-		margin-right: 5rem;
-
 		&:last-child {
 			margin-right: 0;
+		}
+
+		@include bp($point_2, min) {
+			width: 11rem;
+			height: 4rem;
+			margin-right: 5rem;
 		}
 
 		@include bp($point_3) {
@@ -134,7 +140,10 @@
 	align-items: center;
 
 	width: 100%;
-	min-height: 8rem;
+	
+	@include bp($point_2, min) {
+		min-height: 8rem;
+	}
 
 	@include bp($point_3) {
 		flex-direction: column;
@@ -188,8 +197,10 @@
 	flex-wrap: wrap;
 	justify-content: center;
 
-	margin-left: auto;
-
+	@include bp($point_2, min) {
+		margin-left: auto;
+	}
+	
 	@include bp($point_3) {
 		margin-left: 0;
 	}
@@ -197,10 +208,12 @@
 	.social_item {
 		@extend %hover_opacity;
 
-		margin-right: 3rem;
-
 		&:last-child {
 			margin-right: 0;
+		}
+
+		@include bp($point_2, min) {
+			margin-right: 3rem;
 		}
 
 		@include bp($point_3) {

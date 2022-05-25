@@ -29,557 +29,504 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
   <link href="css/app.css" rel="stylesheet"></head>
   <body>
-        <header class="header_desctop">
-          <div class="section_in">
-            <div class="header_top">
-              <div class="header_top_line"></div>
-              <div class="header_logo_w">
-                <h1 class="header_logo">	<a class="heder_logo_link" href="#">
-                    <svg class="icon icon_logo ">
-                      <use xlink:href="images/sprite/sprite.svg#logo"></use>
-                    </svg></a></h1>
-                <div class="header_logo__descriptor">Global dataset on HIV epidemiology and response</div>
+    <header class="header">
+      <div class="header__top_line"></div>
+      <div class="header_wrapper section_in"><a class="heder__logo_link" href="#">
+          <div class="header__logo_icon_w">
+            <svg class="icon icon_logo icon--size_mod">
+              <use xlink:href="images/sprite/sprite.svg#logo"></use>
+            </svg>
+          </div><span class="header_logo__description">Global dataset on HIV epidemiology and response</span></a>
+        <button class="header__search_btn">
+          <div class="header__search_icon_w">
+            <svg class="icon icon_search icon--size_mod">
+              <use xlink:href="images/sprite/sprite.svg#search"></use>
+            </svg>
+          </div>
+        </button>
+        <button class="header__menu_trigger_btn menuTrigger">
+          <div class="header__menu_trigger_icon_w">
+            <div class="menu_trigger_icon"><span class="menu_trigger_decor"></span></div>
+          </div>
+        </button>
+        <div class="header__navigation_box">
+          <nav class="header__nav">
+            <ul class="header__nav__list ">
+              <li class="header__nav__item  header__nav__item--animate_mod wow animate__fadeInLeft"><a class="header__nav__link header__nav__link--animate_mod wow animate__fadeInLeft" href="#">Fact sheets</a></li>
+              <li class="header__nav__item  header__nav__item--animate_mod wow animate__fadeInLeft"><a class="header__nav__link header__nav__link--animate_mod wow animate__fadeInLeft" href="#">Epidemic &amp; response</a></li>
+              <li class="header__nav__item  header__nav__item--animate_mod wow animate__fadeInLeft"><a class="header__nav__link header__nav__link--animate_mod wow animate__fadeInLeft" href="#">key populations</a></li>
+              <li class="header__nav__item  header__nav__item--animate_mod wow animate__fadeInLeft"><a class="header__nav__link header__nav__link--animate_mod wow animate__fadeInLeft" href="#">finance</a></li>
+              <li class="header__nav__item  header__nav__item--animate_mod wow animate__fadeInLeft"><a class="header__nav__link header__nav__link--animate_mod wow animate__fadeInLeft" href="#">law &amp; policies</a></li>
+            </ul>
+          </nav>
+          <div class="heder__menu_w">
+            <ul class="heder__menu__list ">
+              <li class="heder__menu__item  "><a class="heder__menu__link " href="#">Indicators catalogue</a></li>
+              <li class="heder__menu__item  "><a class="heder__menu__link " href="#">report builder</a></li>
+            </ul>
+            <div class="header__language">
+              <div class="header__language_wrap">
+                <select class="header__language_select languageSelect">
+                  <option class="header__language_option" value="English">English</option>
+                  <option class="header__language_option" value="Deutsch">Deutsch</option>
+                  <option class="header__language_option" value="Ukrainian">Ukrainian</option>
+                  <option class="header__language_option" value="Polish">Polish</option>
+                  <option class="header__language_option" value="Español">Español</option>
+                  <option class="header__language_option" value="Italiano">Italiano</option>
+                  <option class="header__language_option" value="Nederlandse">Nederlandse</option>
+                </select>
               </div>
-              <div class="header_menu">
-                <ul class="header_menu__list ">
-                  <li class="header_menu__item  "><a class="header_menu__link " href="#">Indicators catalogue</a></li>
-                  <li class="header_menu__item  "><a class="header_menu__link " href="#">report builder</a></li>
-                </ul>
-              </div>
-              <select class="header_language__select languageSelect">
-                <option class="header_language__option" value="English">English</option>
-                <option class="header_language__option" value="Deutsch">Deutsch</option>
-                <option class="header_language__option" value="Ukrainian">Ukrainian</option>
-                <option class="header_language__option" value="Polish">Polish</option>
-                <option class="header_language__option" value="Español">Español</option>
-                <option class="header_language__option" value="Italiano">Italiano</option>
-                <option class="header_language__option" value="Nederlandse">Nederlandse</option>
-              </select>
-            </div>
-            <div class="header_bottom">
-              <nav class="header_nav">
-                <ul class="header_nav__list ">
-                  <li class="header_nav__item  "><a class="header_nav__link " href="#">Fact sheets</a></li>
-                  <li class="header_nav__item  "><a class="header_nav__link " href="#">Epidemic &amp; response</a></li>
-                  <li class="header_nav__item  "><a class="header_nav__link " href="#">key populations</a></li>
-                  <li class="header_nav__item  "><a class="header_nav__link " href="#">finance</a></li>
-                  <li class="header_nav__item  "><a class="header_nav__link " href="#">law &amp; policies</a></li>
-                </ul>
-              </nav>
             </div>
           </div>
-        </header>
-        <header class="header_mobile">
-          <div class="section_in">
-            <div class="header_mobile_wrap">
-              <div class="header_top_line"></div><a class="header_mobile_logo" href="#">
-                <svg class="icon icon_logo ">
-                  <use xlink:href="images/sprite/sprite.svg#logo"></use>
-                </svg></a>
-              <div class="header_mobile_search_w">
-                <button class="header_mobile_search_btn">
-                  <svg class="icon icon_search ">
-                    <use xlink:href="images/sprite/sprite.svg#search"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="menu_trigger menuTrigger"><span class="menu_trigger_decor"></span></div>
-            </div>
-          </div>
-          <div class="header_mobile_popap_menu">
-            <nav class="header_mobile_nav">
-              <ul class="header_mobile_nav__list ">
-                <li class="header_mobile_nav__item  header_mobile_nav__item--animate_mod wow animate__fadeInLeft"><a class="header_mobile_nav__link header_mobile_nav__link--animate_mod wow animate__fadeInLeft" href="#">Fact sheets</a></li>
-                <li class="header_mobile_nav__item  header_mobile_nav__item--animate_mod wow animate__fadeInLeft"><a class="header_mobile_nav__link header_mobile_nav__link--animate_mod wow animate__fadeInLeft" href="#">Epidemic &amp; response</a></li>
-                <li class="header_mobile_nav__item  header_mobile_nav__item--animate_mod wow animate__fadeInLeft"><a class="header_mobile_nav__link header_mobile_nav__link--animate_mod wow animate__fadeInLeft" href="#">key populations</a></li>
-                <li class="header_mobile_nav__item  header_mobile_nav__item--animate_mod wow animate__fadeInLeft"><a class="header_mobile_nav__link header_mobile_nav__link--animate_mod wow animate__fadeInLeft" href="#">finance</a></li>
-                <li class="header_mobile_nav__item  header_mobile_nav__item--animate_mod wow animate__fadeInLeft"><a class="header_mobile_nav__link header_mobile_nav__link--animate_mod wow animate__fadeInLeft" href="#">law &amp; policies</a></li>
-              </ul>
-            </nav>
-            <div class="heder_mobile_menu">
-              <ul class="heder_mobile_menu__list ">
-                <li class="heder_mobile_menu__item  "><a class="heder_mobile_menu__link " href="#">Indicators catalogue</a></li>
-                <li class="heder_mobile_menu__item  "><a class="heder_mobile_menu__link " href="#">report builder</a></li>
-              </ul>
-            </div>
-            <div class="header_mobile_language">
-              <select class="header_language__select languageSelect">
-                <option class="header_language__option" value="English">English</option>
-                <option class="header_language__option" value="Deutsch">Deutsch</option>
-                <option class="header_language__option" value="Ukrainian">Ukrainian</option>
-                <option class="header_language__option" value="Polish">Polish</option>
-                <option class="header_language__option" value="Español">Español</option>
-                <option class="header_language__option" value="Italiano">Italiano</option>
-                <option class="header_language__option" value="Nederlandse">Nederlandse</option>
-              </select>
-            </div>
-          </div>
-        </header>
+        </div>
+      </div>
+    </header>
     <div class="wrapper">
       <div class="base">
-        <section class="slider_section">
-          <div class="slider_header_block">
-            <div class="slider_title">AIDSinfo</div>
-            <div class="slider_description">UNAIDS leads the world’s most extensive data collection on HIV epidemiology, programme coverage and finance and publishes the most authoritative and up-to-date information on the HIV epidemic.</div>
+        <section class="section slider">
+          <div class="slider__header">
+            <div class="section_in">
+              <div class="slider__title">AIDSinfo</div>
+              <div class="slider__description">UNAIDS leads the world’s most extensive data collection on HIV epidemiology, programme coverage and finance and publishes the most authoritative and up-to-date information on the HIV epidemic.</div>
+            </div>
           </div>
-          <ul class="slider_list">
-            <li class="slider_item item1">
-              <picture class="picture_bg_w">
-                <source media="(min-width: 768px)" srcset="images/slider_img_1.jpg.webp" type="image/webp">
-                <source media="(max-width: 767px)" srcset="images/slider_img_1.jpg.webp" type="image/webp">
-                <source media="(min-width: 768px)" srcset="images/slider_img_1.jpg" type="image/jpg">
-                <source media="(max-width: 767px)" srcset="images/slider_img_1.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_1.jpg" alt="">
+          <ul class="slider__list">
+            <li class="slider_item">
+              <picture class="slicer_item__picture_bg_w">
+                <source srcset="images/slider_img_1.jpg.webp" type="image/webp">
+                <source srcset="images/slider_img_1.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_1.jpg" alt="">
               </picture>
-              <div class="slider_item_text_block">
-                <div class="slider_item_title">Fact sheets</div>
-                <div class="slider_item_description">Global, regional, and country key facts and figures on HIV &amp; AIDS.</div><a class="slider_item_link" href="#">
-                  <svg class="icon icon_arrow_2 ">
-                    <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                  </svg></a>
+              <div class="slider_item__text_w">
+                <div class="slider_item__title">Fact sheets</div>
+                <div class="slider_item__description">Global, regional, and country key facts and figures on HIV &amp; AIDS.</div><a class="slider_item__link" href="#">
+                  <div class="slider_item__icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
+                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                    </svg>
+                  </div></a>
               </div>
             </li>
-            <li class="slider_item item2">
-              <picture class="picture_bg_w">
-                <source media="(min-width: 768px)" srcset="images/slider_img_2.jpg.webp" type="image/webp">
-                <source media="(max-width: 767px)" srcset="images/slider_img_2.jpg.webp" type="image/webp">
-                <source media="(min-width: 768px)" srcset="images/slider_img_2.jpg" type="image/jpg">
-                <source media="(max-width: 767px)" srcset="images/slider_img_2.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_2.jpg" alt="">
+            <li class="slider_item">
+              <picture class="slicer_item__picture_bg_w">
+                <source srcset="images/slider_img_2.jpg.webp" type="image/webp">
+                <source srcset="images/slider_img_2.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_2.jpg" alt="">
               </picture>
-              <div class="slider_item_text_block">
-                <div class="slider_item_title">Epidemic &amp; Response</div>
-                <div class="slider_item_description">HIV epidemiological estimates and country-reported data on their national AIDS response.</div><a class="slider_item_link" href="#">
-                  <svg class="icon icon_arrow_2 ">
-                    <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                  </svg></a>
+              <div class="slider_item__text_w">
+                <div class="slider_item__title">Epidemic &amp; Response</div>
+                <div class="slider_item__description">HIV epidemiological estimates and country-reported data on their national AIDS response.</div><a class="slider_item__link" href="#">
+                  <div class="slider_item__icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
+                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                    </svg>
+                  </div></a>
               </div>
             </li>
-            <li class="slider_item item3">
-              <picture class="picture_bg_w">
-                <source media="(min-width: 768px)" srcset="images/slider_img_3.jpg.webp" type="image/webp">
-                <source media="(max-width: 767px)" srcset="images/slider_img_3.jpg.webp" type="image/webp">
-                <source media="(min-width: 768px)" srcset="images/slider_img_3.jpg" type="image/jpg">
-                <source media="(max-width: 767px)" srcset="images/slider_img_3.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_3.jpg" alt="">
+            <li class="slider_item">
+              <picture class="slicer_item__picture_bg_w">
+                <source srcset="images/slider_img_3.jpg.webp" type="image/webp">
+                <source srcset="images/slider_img_3.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_3.jpg" alt="">
               </picture>
-              <div class="slider_item_text_block">
-                <div class="slider_item_title">key population</div>
-                <div class="slider_item_description">Data on sex workers, men who have sex with men, people who inject drugs, transgender people, and prisoners a for local-level action for policy-makers, program directors, community activists and advocates among others.</div><a class="slider_item_link" href="#">
-                  <svg class="icon icon_arrow_2 ">
-                    <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                  </svg></a>
+              <div class="slider_item__text_w">
+                <div class="slider_item__title">key population</div>
+                <div class="slider_item__description">Data on sex workers, men who have sex with men, people who inject drugs, transgender people, and prisoners a for local-level action for policy-makers, program directors, community activists and advocates among others.</div><a class="slider_item__link" href="#">
+                  <div class="slider_item__icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
+                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                    </svg>
+                  </div></a>
               </div>
             </li>
-            <li class="slider_item item4">
-              <picture class="picture_bg_w">
-                <source media="(min-width: 768px)" srcset="images/slider_img_4.jpg.webp" type="image/webp">
-                <source media="(max-width: 767px)" srcset="images/slider_img_4.jpg.webp" type="image/webp">
-                <source media="(min-width: 768px)" srcset="images/slider_img_4.jpg" type="image/jpg">
-                <source media="(max-width: 767px)" srcset="images/slider_img_4.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_4.jpg" alt="">
+            <li class="slider_item">
+              <picture class="slicer_item__picture_bg_w">
+                <source srcset="images/slider_img_4.jpg.webp" type="image/webp">
+                <source srcset="images/slider_img_4.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_4.jpg" alt="">
               </picture>
-              <div class="slider_item_text_block">
-                <div class="slider_item_title">finance</div>
-                <div class="slider_item_description">More than 85 different indicators on HIV financial resources submitted through Global AIDS Monitoring and triangulated with HIV and Health financial resources from other agencies, aiming to provide strategic information for policy-makers, program directors and researchers.</div><a class="slider_item_link" href="#">
-                  <svg class="icon icon_arrow_2 ">
-                    <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                  </svg></a>
+              <div class="slider_item__text_w">
+                <div class="slider_item__title">finance</div>
+                <div class="slider_item__description">More than 85 different indicators on HIV financial resources submitted through Global AIDS Monitoring and triangulated with HIV and Health financial resources from other agencies, aiming to provide strategic information for policy-makers, program directors and researchers.</div><a class="slider_item__link" href="#">
+                  <div class="slider_item__icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
+                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                    </svg>
+                  </div></a>
               </div>
             </li>
-            <li class="slider_item item5">
-              <picture class="picture_bg_w">
-                <source media="(min-width: 768px)" srcset="images/slider_img_5.jpg.webp" type="image/webp">
-                <source media="(max-width: 767px)" srcset="images/slider_img_5.jpg.webp" type="image/webp">
-                <source media="(min-width: 768px)" srcset="images/slider_img_5.jpg" type="image/jpg">
-                <source media="(max-width: 767px)" srcset="images/slider_img_5.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_5.jpg" alt="">
+            <li class="slider_item">
+              <picture class="slicer_item__picture_bg_w">
+                <source srcset="images/slider_img_5.jpg.webp" type="image/webp">
+                <source srcset="images/slider_img_5.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_5.jpg" alt="">
               </picture>
-              <div class="slider_item_text_block">
-                <div class="slider_item_title">Laws &amp; Policies</div>
-                <div class="slider_item_description">HIV-related laws and policies data in countries, reported by both national authorities and civil society to UNAIDS and WHO, aimed at promoting accountability and support joint analysis of policy information with other relevant data to inform national AIDS response. HIV-related laws and policies data in countries, reported by both national authorities and civil society to UNAIDS and WHO, aimed at promoting accountability and support joint analysis of policy information with other relevant data to inform national AIDS response.</div><a class="slider_item_link" href="#">
-                  <svg class="icon icon_arrow_2 ">
-                    <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                  </svg></a>
+              <div class="slider_item__text_w">
+                <div class="slider_item__title">Laws &amp; Policies</div>
+                <div class="slider_item__description">HIV-related laws and policies data in countries, reported by both national authorities and civil society to UNAIDS and WHO, aimed at promoting accountability and support joint analysis of policy information with other relevant data to inform national AIDS response. HIV-related laws and policies data in countries, reported by both national authorities and civil society to UNAIDS and WHO, aimed at promoting accountability and support joint analysis of policy information with other relevant data to inform national AIDS response.</div><a class="slider_item__link" href="#">
+                  <div class="slider_item__icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
+                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                    </svg>
+                  </div></a>
               </div>
             </li>
           </ul>
         </section>
-        <section class="search_section"> 
-          <div class="search_wrap">
-            <h3 class="search_header">search data</h3>
-            <div class="search_input_w">
-              <input class="search_input" type="search" placeholder="e.g. HIV prevalence, sex workers, South Africa">
-              <div class="btn_search_wrapper btn_search_settings">
-                <div class="search_icon_wrap">
-                  <svg class="icon icon_slider ">
-                    <use xlink:href="images/sprite/sprite.svg#slider"></use>
-                  </svg>
+        <section class="section search">
+          <div class="search_wrapper">
+            <div class="search_section_in">
+              <h3 class="search_header">search data</h3>
+              <div class="search_input_w">
+                <input class="search_input" type="search" placeholder="e.g. HIV prevalence, sex workers, South Africa">
+                <div class="btn_search_wrapper">
+                  <div class="btn_search_settings">
+                    <div class="search_icon_wrap">
+                      <svg class="icon icon_slider icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#slider"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="btn_search_go"> 
+                    <div class="search_icon_wrap">
+                      <svg class="icon icon_i_search icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#i_search"></use>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="btn_search_wrapper btn_search_go"> 
-                <div class="search_icon_wrap">
-                  <svg class="icon icon_i_search ">
-                    <use xlink:href="images/sprite/sprite.svg#i_search"></use>
-                  </svg>
-                </div>
+              <div class="search_popular_w">
+                <h4 class="search_popular__header">popular searches</h4>
+                <ul class="search_popular__list">
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">HIV prevalence among sex workers</div>
+                    <div class="search_popular__region">Eastern and Souther Africa</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Budget for HIV and AIDS programmes from domestic public sources</div>
+                    <div class="search_popular__region">Global</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Elimination of mother-to-child transmission</div>
+                    <div class="search_popular__region">Asia &amp; Pacific</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">HIV prevalence among sex workers</div>
+                    <div class="search_popular__region">Eastern and Souther Africa</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Budget for HIV and AIDS programmes from domestic public sources</div>
+                    <div class="search_popular__region">Global</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Elimination of mother-to-child transmission</div>
+                    <div class="search_popular__region">Asia &amp; Pacific</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">HIV prevalence among sex workers</div>
+                    <div class="search_popular__region">Eastern and Souther Africa</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Budget for HIV and AIDS programmes from domestic public sources</div>
+                    <div class="search_popular__region">Global</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Elimination of mother-to-child transmission</div>
+                    <div class="search_popular__region">Asia &amp; Pacific</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">HIV prevalence among sex workers</div>
+                    <div class="search_popular__region">Eastern and Souther Africa</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Budget for HIV and AIDS programmes from domestic public sources</div>
+                    <div class="search_popular__region">Global</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Elimination of mother-to-child transmission</div>
+                    <div class="search_popular__region">Asia &amp; Pacific</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">HIV prevalence among sex workers</div>
+                    <div class="search_popular__region">Eastern and Souther Africa</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Budget for HIV and AIDS programmes from domestic public sources</div>
+                    <div class="search_popular__region">Global</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Elimination of mother-to-child transmission</div>
+                    <div class="search_popular__region">Asia &amp; Pacific</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">HIV prevalence among sex workers</div>
+                    <div class="search_popular__region">Eastern and Souther Africa</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Budget for HIV and AIDS programmes from domestic public sources</div>
+                    <div class="search_popular__region">Global</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Elimination of mother-to-child transmission</div>
+                    <div class="search_popular__region">Asia &amp; Pacific</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">HIV prevalence among sex workers</div>
+                    <div class="search_popular__region">Eastern and Souther Africa</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Budget for HIV and AIDS programmes from domestic public sources</div>
+                    <div class="search_popular__region">Global</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">HIV prevalence among sex workers</div>
+                    <div class="search_popular__region">Eastern and Souther Africa</div>
+                  </li>
+                  <li class="search_popular__item">
+                    <div class="search_popular__arrow_w">
+                      <svg class="icon icon_arrow_2 icon--size_mod">
+                        <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
+                      </svg>
+                    </div>
+                    <div class="search_popular__text">Budget for HIV and AIDS programmes from domestic public sources</div>
+                    <div class="search_popular__region">Global</div>
+                  </li>
+                </ul>
               </div>
-            </div>
-            <div class="search_popular_queries_w">
-              <h4 class="search_popular_queries__header">popular searches</h4>
-              <ul class="search_popular_queries__list">
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">HIV prevalence among sex workers</div>
-                  <div class="search_popular_queries__region">Eastern and Souther Africa</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Budget for HIV and AIDS programmes from domestic public sources</div>
-                  <div class="search_popular_queries__region">Global</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Elimination of mother-to-child transmission</div>
-                  <div class="search_popular_queries__region">Asia &amp; Pacific</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">HIV prevalence among sex workers</div>
-                  <div class="search_popular_queries__region">Eastern and Souther Africa</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Budget for HIV and AIDS programmes from domestic public sources</div>
-                  <div class="search_popular_queries__region">Global</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Elimination of mother-to-child transmission</div>
-                  <div class="search_popular_queries__region">Asia &amp; Pacific</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">HIV prevalence among sex workers</div>
-                  <div class="search_popular_queries__region">Eastern and Souther Africa</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Budget for HIV and AIDS programmes from domestic public sources</div>
-                  <div class="search_popular_queries__region">Global</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Elimination of mother-to-child transmission</div>
-                  <div class="search_popular_queries__region">Asia &amp; Pacific</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">HIV prevalence among sex workers</div>
-                  <div class="search_popular_queries__region">Eastern and Souther Africa</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Budget for HIV and AIDS programmes from domestic public sources</div>
-                  <div class="search_popular_queries__region">Global</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Elimination of mother-to-child transmission</div>
-                  <div class="search_popular_queries__region">Asia &amp; Pacific</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">HIV prevalence among sex workers</div>
-                  <div class="search_popular_queries__region">Eastern and Souther Africa</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Budget for HIV and AIDS programmes from domestic public sources</div>
-                  <div class="search_popular_queries__region">Global</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Elimination of mother-to-child transmission</div>
-                  <div class="search_popular_queries__region">Asia &amp; Pacific</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">HIV prevalence among sex workers</div>
-                  <div class="search_popular_queries__region">Eastern and Souther Africa</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Budget for HIV and AIDS programmes from domestic public sources</div>
-                  <div class="search_popular_queries__region">Global</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Elimination of mother-to-child transmission</div>
-                  <div class="search_popular_queries__region">Asia &amp; Pacific</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">HIV prevalence among sex workers</div>
-                  <div class="search_popular_queries__region">Eastern and Souther Africa</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Budget for HIV and AIDS programmes from domestic public sources</div>
-                  <div class="search_popular_queries__region">Global</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">HIV prevalence among sex workers</div>
-                  <div class="search_popular_queries__region">Eastern and Souther Africa</div>
-                </li>
-                <li class="search_popular_queries__item last_two_opacity">
-                  <div class="search_popular_queries__arrow_w">
-                    <svg class="icon icon_arrow_2 ">
-                      <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
-                    </svg>
-                  </div>
-                  <div class="search_popular_queries__text">Budget for HIV and AIDS programmes from domestic public sources</div>
-                  <div class="search_popular_queries__region">Global</div>
-                </li>
-              </ul>
-            </div>
-            <button class="button_wiev_more_queries">view more </button>
-            <button class="close_btn search_block_close_btn"></button>
-          </div>
-        </section>
-        <section class="popular_publications">
-          <div class="section_in">
-            <div class="popular_publications_wrap">
-              <div class="popular_publications_header">
-                <h3 class="popular_publications_title">popular publications</h3>
-                <button class="popular_publications_btn">view all</button>
+              <div class="search_popular_btn_w">
+                <button class="btn_wiev_more">view more </button>
+                <button class="btn_close_srch"></button>
               </div>
-              <ul class="popular_publications_list"> 
-                <li class="popular_publications_item"> <a class="popular_publications_link" href="#">
-                    <picture class="bg_link">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_1.jpg.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_1.jpg.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_1.jpg" type="image/jpg">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_1.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_1.jpg" alt="">
-                    </picture></a></li>
-                <li class="popular_publications_item"> <a class="popular_publications_link" href="#">
-                    <picture class="bg_link">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_2.jpg.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_2.jpg.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_2.jpg" type="image/jpg">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_2.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_2.jpg" alt="">
-                    </picture></a></li>
-                <li class="popular_publications_item"> <a class="popular_publications_link" href="#">
-                    <picture class="bg_link">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_3.jpg.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_3.jpg.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_3.jpg" type="image/jpg">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_3.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_3.jpg" alt="">
-                    </picture></a></li>
-                <li class="popular_publications_item"> <a class="popular_publications_link" href="#">
-                    <picture class="bg_link">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_4.jpg.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_4.jpg.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_4.jpg" type="image/jpg">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_4.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_4.jpg" alt="">
-                    </picture></a></li>
-                <li class="popular_publications_item"> <a class="popular_publications_link" href="#">
-                    <picture class="bg_link">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_1.jpg.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_1.jpg.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_1.jpg" type="image/jpg">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_1.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_1.jpg" alt="">
-                    </picture></a></li>
-                <li class="popular_publications_item"> <a class="popular_publications_link" href="#">
-                    <picture class="bg_link">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_2.jpg.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_2.jpg.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_2.jpg" type="image/jpg">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_2.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_2.jpg" alt="">
-                    </picture></a></li>
-                <li class="popular_publications_item"> <a class="popular_publications_link" href="#">
-                    <picture class="bg_link">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_3.jpg.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_3.jpg.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_3.jpg" type="image/jpg">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_3.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_3.jpg" alt="">
-                    </picture></a></li>
-                <li class="popular_publications_item"> <a class="popular_publications_link" href="#">
-                    <picture class="bg_link">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_4.jpg.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_4.jpg.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_4.jpg" type="image/jpg">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_4.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_4.jpg" alt="">
-                    </picture></a></li>
-                <li class="popular_publications_item"> <a class="popular_publications_link" href="#">
-                    <picture class="bg_link">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_1.jpg.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_1.jpg.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/popular_publications_1.jpg" type="image/jpg">
-                      <source media="(max-width: 767px)" srcset="images/popular_publications_1.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_1.jpg" alt="">
-                    </picture></a></li>
-              </ul>
             </div>
           </div>
         </section>
-        <section class="recommended_resources_section">
+        <section class="section publications">
+          <div class="section_in publications_wrapper">
+            <div class="publications__header">
+              <h3 class="publications__title">popular publications</h3>
+              <button class="publications__btn">view all</button>
+            </div>
+            <ul class="publications__list"> 
+              <li class="publications__item"> <a class="publications__link" href="#">
+                  <picture class="publications__image_wrapper">
+                    <source srcset="images/popular_publications_1.jpg.webp" type="image/webp">
+                    <source srcset="images/popular_publications_1.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_1.jpg" alt="">
+                  </picture></a></li>
+              <li class="publications__item"> <a class="publications__link" href="#">
+                  <picture class="publications__image_wrapper">
+                    <source srcset="images/popular_publications_2.jpg.webp" type="image/webp">
+                    <source srcset="images/popular_publications_2.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_2.jpg" alt="">
+                  </picture></a></li>
+              <li class="publications__item"> <a class="publications__link" href="#">
+                  <picture class="publications__image_wrapper">
+                    <source srcset="images/popular_publications_3.jpg.webp" type="image/webp">
+                    <source srcset="images/popular_publications_3.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_3.jpg" alt="">
+                  </picture></a></li>
+              <li class="publications__item"> <a class="publications__link" href="#">
+                  <picture class="publications__image_wrapper">
+                    <source srcset="images/popular_publications_4.jpg.webp" type="image/webp">
+                    <source srcset="images/popular_publications_4.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_4.jpg" alt="">
+                  </picture></a></li>
+              <li class="publications__item"> <a class="publications__link" href="#">
+                  <picture class="publications__image_wrapper">
+                    <source srcset="images/slider_img_1.jpg.webp" type="image/webp">
+                    <source srcset="images/slider_img_1.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_1.jpg" alt="">
+                  </picture></a></li>
+              <li class="publications__item"> <a class="publications__link" href="#">
+                  <picture class="publications__image_wrapper">
+                    <source srcset="images/slider_img_1_collaps.jpg.webp" type="image/webp">
+                    <source srcset="images/slider_img_1_collaps.jpg" type="image/jpg"><img class="contain_img" src="images/slider_img_1_collaps.jpg" alt="">
+                  </picture></a></li>
+              <li class="publications__item"> <a class="publications__link" href="#">
+                  <picture class="publications__image_wrapper">
+                    <source srcset="images/popular_publications_3.jpg.webp" type="image/webp">
+                    <source srcset="images/popular_publications_3.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_3.jpg" alt="">
+                  </picture></a></li>
+              <li class="publications__item"> <a class="publications__link" href="#">
+                  <picture class="publications__image_wrapper">
+                    <source srcset="images/popular_publications_4.jpg.webp" type="image/webp">
+                    <source srcset="images/popular_publications_4.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_4.jpg" alt="">
+                  </picture></a></li>
+              <li class="publications__item"> <a class="publications__link" href="#">
+                  <picture class="publications__image_wrapper">
+                    <source srcset="images/popular_publications_1.jpg.webp" type="image/webp">
+                    <source srcset="images/popular_publications_1.jpg" type="image/jpg"><img class="contain_img" src="images/popular_publications_1.jpg" alt="">
+                  </picture></a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="section resources">
           <div class="section_in">
-            <h3 class="recommended_resources_title">recommended resources</h3>
-            <ul class="recommended_resources_list">
-              <li class="recommended_resources_item"> <a class="recommended_resources_item__link" href="#">
-                  <div class="recomended_resources_item__text_wrap">
-                    <div class="recommended_resources_item__title"><span>Core </span><span class="accent">epidemiology </span><span>slides</span>
-                    </div>
-                    <div class="recommended_resources_item__subtitle">July 2020</div>
+            <h3 class="resources__title">recommended resources</h3>
+            <ul class="resources__list">
+              <li class="resources__item"> <a class="resources__item_link" href="#">
+                  <div class="resources__item_text_wrap">
+                    <div class="resources__item_title">Core <span>epidemiology</span> slides</div>
+                    <div class="resources__item_subtitle">July 2020</div>
                   </div>
-                  <div class="recommended_resources_item__icon_wrap">
-                    <svg class="icon icon_arrow_2 ">
+                  <div class="resources__item_icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
                       <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
                     </svg>
                   </div></a></li>
-              <li class="recommended_resources_item"> <a class="recommended_resources_item__link" href="#">
-                  <div class="recomended_resources_item__text_wrap">
-                    <div class="recommended_resources_item__title"><span class="accent">Seizing </span><span>the moment</span>
-                    </div>
-                    <div class="recommended_resources_item__subtitle">Global AIDS update 2020</div>
+              <li class="resources__item"> <a class="resources__item_link" href="#">
+                  <div class="resources__item_text_wrap">
+                    <div class="resources__item_title"><span>Seizing</span> the moment</div>
+                    <div class="resources__item_subtitle">Global AIDS update 2020</div>
                   </div>
-                  <div class="recommended_resources_item__icon_wrap">
-                    <svg class="icon icon_arrow_2 ">
+                  <div class="resources__item_icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
                       <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
                     </svg>
                   </div></a></li>
-              <li class="recommended_resources_item"> <a class="recommended_resources_item__link" href="#">
-                  <div class="recomended_resources_item__text_wrap">
-                    <div class="recommended_resources_item__title"><span>Global </span><span class="accent">HIV &amp; AIDS </span><span>statistics</span>
-                    </div>
-                    <div class="recommended_resources_item__subtitle">2020 Fact sheet</div>
+              <li class="resources__item"> <a class="resources__item_link" href="#">
+                  <div class="resources__item_text_wrap">
+                    <div class="resources__item_title">Global Global Global <span>HIV & AIDS</span> statistics</div>
+                    <div class="resources__item_subtitle">2020 Fact sheet</div>
                   </div>
-                  <div class="recommended_resources_item__icon_wrap">
-                    <svg class="icon icon_arrow_2 ">
+                  <div class="resources__item_icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
                       <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
                     </svg>
                   </div></a></li>
-              <li class="recommended_resources_item"> <a class="recommended_resources_item__link" href="#">
-                  <div class="recomended_resources_item__text_wrap">
-                    <div class="recommended_resources_item__title"><span class="accent">HIV epidemological </span><span>estimates spreadsheet</span>
-                    </div>
-                    <div class="recommended_resources_item__subtitle">1990 - 2019 with uncertainty bounds</div>
+              <li class="resources__item"> <a class="resources__item_link" href="#">
+                  <div class="resources__item_text_wrap">
+                    <div class="resources__item_title"><span>HIV epidemological</span> estimates spreadsheet</div>
+                    <div class="resources__item_subtitle">1990 - 2019 with uncertainty bounds</div>
                   </div>
-                  <div class="recommended_resources_item__icon_wrap">
-                    <svg class="icon icon_arrow_2 ">
+                  <div class="resources__item_icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
                       <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
                     </svg>
                   </div></a></li>
-              <li class="recommended_resources_item"> <a class="recommended_resources_item__link" href="#">
-                  <div class="recomended_resources_item__text_wrap">
-                    <div class="recommended_resources_item__title"><span>Core </span><span class="accent">epidemiology </span><span>slides</span>
-                    </div>
-                    <div class="recommended_resources_item__subtitle">July 2020</div>
+              <li class="resources__item"> <a class="resources__item_link" href="#">
+                  <div class="resources__item_text_wrap">
+                    <div class="resources__item_title">Core <span>epidemiology</span> slides</div>
+                    <div class="resources__item_subtitle">July 2020</div>
                   </div>
-                  <div class="recommended_resources_item__icon_wrap">
-                    <svg class="icon icon_arrow_2 ">
+                  <div class="resources__item_icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
                       <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
                     </svg>
                   </div></a></li>
-              <li class="recommended_resources_item"> <a class="recommended_resources_item__link" href="#">
-                  <div class="recomended_resources_item__text_wrap">
-                    <div class="recommended_resources_item__title"><span class="accent">Seizing </span><span>the moment</span>
-                    </div>
-                    <div class="recommended_resources_item__subtitle">Global AIDS update 2020</div>
+              <li class="resources__item"> <a class="resources__item_link" href="#">
+                  <div class="resources__item_text_wrap">
+                    <div class="resources__item_title"><span>Seizing</span> the moment</div>
+                    <div class="resources__item_subtitle">Global AIDS update 2020</div>
                   </div>
-                  <div class="recommended_resources_item__icon_wrap">
-                    <svg class="icon icon_arrow_2 ">
+                  <div class="resources__item_icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
                       <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
                     </svg>
                   </div></a></li>
-              <li class="recommended_resources_item"> <a class="recommended_resources_item__link" href="#">
-                  <div class="recomended_resources_item__text_wrap">
-                    <div class="recommended_resources_item__title"><span>Global </span><span class="accent">HIV &amp; AIDS </span><span>statistics</span>
-                    </div>
-                    <div class="recommended_resources_item__subtitle">2020 Fact sheet</div>
+              <li class="resources__item"> <a class="resources__item_link" href="#">
+                  <div class="resources__item_text_wrap">
+                    <div class="resources__item_title">Global <span>HIV & AIDS</span> statistics</div>
+                    <div class="resources__item_subtitle">2020 Fact sheet</div>
                   </div>
-                  <div class="recommended_resources_item__icon_wrap">
-                    <svg class="icon icon_arrow_2 ">
+                  <div class="resources__item_icon_w">
+                    <svg class="icon icon_arrow_2 icon--size_mod">
                       <use xlink:href="images/sprite/sprite.svg#arrow_2"></use>
                     </svg>
                   </div></a></li>
@@ -589,96 +536,97 @@
       </div>
       <footer class="footer">
         <div class="footer_top_line"></div>
-        <div class="section_in">
-          <div class="footer_top_wrapper">
-            <div class="footer_logo_w"><a class="footer_logo_link" href="#">
-                <svg class="icon icon_logo_footer ">
-                  <use xlink:href="images/sprite/sprite.svg#logo_footer"></use>
-                </svg></a></div>
-            <div class="footer_brands_w">
-              <h3 class="brands_title">A collaboration of</h3>
-              <ul class="brands__list">
-                <li class="brands__item "><a class="brands__link " href="#">
-                    <picture class="brands_img_w">
-                      <source media="(min-width: 768px)" srcset="images/logo_unaids.png.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/logo_unaids.png.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/logo_unaids.png" type="image/png">
-                      <source media="(max-width: 767px)" srcset="images/logo_unaids.png" type="image/png"><img class="contain_img" src="images/logo_unaids.png" alt="">
-                    </picture></a></li>
-                <li class="brands__item "><a class="brands__link " href="#">
-                    <picture class="brands_img_w">
-                      <source media="(min-width: 768px)" srcset="images/logo_unicef.png.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/logo_unicef.png.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/logo_unicef.png" type="image/png">
-                      <source media="(max-width: 767px)" srcset="images/logo_unicef.png" type="image/png"><img class="contain_img" src="images/logo_unicef.png" alt="">
-                    </picture></a></li>
-                <li class="brands__item "><a class="brands__link " href="#">
-                    <picture class="brands_img_w">
-                      <source media="(min-width: 768px)" srcset="images/logo_world_health.png.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/logo_world_health.png.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/logo_world_health.png" type="image/png">
-                      <source media="(max-width: 767px)" srcset="images/logo_world_health.png" type="image/png"><img class="contain_img" src="images/logo_world_health.png" alt="">
-                    </picture></a></li>
-                <li class="brands__item "><a class="brands__link " href="#">
-                    <picture class="brands_img_w">
-                      <source media="(min-width: 768px)" srcset="images/logo_unaids.png.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/logo_unaids.png.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/logo_unaids.png" type="image/png">
-                      <source media="(max-width: 767px)" srcset="images/logo_unaids.png" type="image/png"><img class="contain_img" src="images/logo_unaids.png" alt="">
-                    </picture></a></li>
-                <li class="brands__item "><a class="brands__link " href="#">
-                    <picture class="brands_img_w">
-                      <source media="(min-width: 768px)" srcset="images/logo_unicef.png.webp" type="image/webp">
-                      <source media="(max-width: 767px)" srcset="images/logo_unicef.png.webp" type="image/webp">
-                      <source media="(min-width: 768px)" srcset="images/logo_unicef.png" type="image/png">
-                      <source media="(max-width: 767px)" srcset="images/logo_unicef.png" type="image/png"><img class="contain_img" src="images/logo_unicef.png" alt="">
-                    </picture></a></li>
+        <div class="footer_top">
+          <div class="section_in">
+            <div class="footer_top_wrapper"><a class="footer_logo_link" href="#">
+                <div class="footer_icon_w">
+                  <svg class="icon icon_logo_footer icon--size_mod">
+                    <use xlink:href="images/sprite/sprite.svg#logo_footer"></use>
+                  </svg>
+                </div></a>
+              <div class="footer_brands_w">
+                <h3 class="brands_title">A collaboration of</h3>
+                <ul class="brands__list">
+                  <li class="brands__item "><a class="brands__link " href="#">
+                      <picture class="brands_img_w">
+                        <source srcset="images/logo_unaids.png.webp" type="image/webp">
+                        <source srcset="images/logo_unaids.png" type="image/png"><img class="contain_img" src="images/logo_unaids.png" alt="">
+                      </picture></a></li>
+                  <li class="brands__item "><a class="brands__link " href="#">
+                      <picture class="brands_img_w">
+                        <source srcset="images/logo_unicef.png.webp" type="image/webp">
+                        <source srcset="images/logo_unicef.png" type="image/png"><img class="contain_img" src="images/logo_unicef.png" alt="">
+                      </picture></a></li>
+                  <li class="brands__item "><a class="brands__link " href="#">
+                      <picture class="brands_img_w">
+                        <source srcset="images/logo_world_health.png.webp" type="image/webp">
+                        <source srcset="images/logo_world_health.png" type="image/png"><img class="contain_img" src="images/logo_world_health.png" alt="">
+                      </picture></a></li>
+                  <li class="brands__item "><a class="brands__link " href="#">
+                      <picture class="brands_img_w">
+                        <source srcset="images/logo_unaids.png.webp" type="image/webp">
+                        <source srcset="images/logo_unaids.png" type="image/png"><img class="contain_img" src="images/logo_unaids.png" alt="">
+                      </picture></a></li>
+                  <li class="brands__item "><a class="brands__link " href="#">
+                      <picture class="brands_img_w">
+                        <source srcset="images/logo_unicef.png.webp" type="image/webp">
+                        <source srcset="images/logo_unicef.png" type="image/png"><img class="contain_img" src="images/logo_unicef.png" alt="">
+                      </picture></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer_middle"> 
+          <div class="section_in">
+            <div class="footer_middle_wrapper">
+              <ul class="footer_menu__list ">
+                <li class="footer_menu__item  "><a class="footer_menu__link " href="#">About</a></li>
+                <li class="footer_menu__item  "><a class="footer_menu__link " href="#">Contact</a></li>
+                <li class="footer_menu__item  "><a class="footer_menu__link " href="#">Portfolio</a></li>
+                <li class="footer_menu__item  "><a class="footer_menu__link " href="#">Address</a></li>
+                <li class="footer_menu__item  "><a class="footer_menu__link " href="#">About</a></li>
+                <li class="footer_menu__item  "><a class="footer_menu__link " href="#">Contact</a></li>
+              </ul>
+              <ul class="social_list footer_social_list">
+                <li class="social_item"><a class="social_link" href="#">
+                    <svg class="icon icon_i_facebook ">
+                      <use xlink:href="images/sprite/sprite.svg#i_facebook"></use>
+                    </svg></a></li>
+                <li class="social_item"><a class="social_link" href="#">
+                    <svg class="icon icon_i_twitter ">
+                      <use xlink:href="images/sprite/sprite.svg#i_twitter"></use>
+                    </svg></a></li>
+                <li class="social_item"><a class="social_link" href="#">
+                    <svg class="icon icon_i_instagram ">
+                      <use xlink:href="images/sprite/sprite.svg#i_instagram"></use>
+                    </svg></a></li>
+                <li class="social_item"><a class="social_link" href="#">
+                    <svg class="icon icon_i_instagram ">
+                      <use xlink:href="images/sprite/sprite.svg#i_instagram"></use>
+                    </svg></a></li>
+                <li class="social_item"><a class="social_link" href="#">
+                    <svg class="icon icon_i_instagram ">
+                      <use xlink:href="images/sprite/sprite.svg#i_instagram"></use>
+                    </svg></a></li>
+                <li class="social_item"><a class="social_link" href="#">
+                    <svg class="icon icon_i_instagram ">
+                      <use xlink:href="images/sprite/sprite.svg#i_instagram"></use>
+                    </svg></a></li>
               </ul>
             </div>
           </div>
-          <div class="footer_middle_wrapper">
-            <ul class="footer_menu__list ">
-              <li class="footer_menu__item  "><a class="footer_menu__link " href="#">About</a></li>
-              <li class="footer_menu__item  "><a class="footer_menu__link " href="#">Contact</a></li>
-              <li class="footer_menu__item  "><a class="footer_menu__link " href="#">Portfolio</a></li>
-              <li class="footer_menu__item  "><a class="footer_menu__link " href="#">Address</a></li>
-              <li class="footer_menu__item  "><a class="footer_menu__link " href="#">About</a></li>
-              <li class="footer_menu__item  "><a class="footer_menu__link " href="#">Contact</a></li>
-            </ul>
-            <ul class="social_list footer_social_list">
-              <li class="social_item"><a class="social_link" href="#">
-                  <svg class="icon icon_i_facebook ">
-                    <use xlink:href="images/sprite/sprite.svg#i_facebook"></use>
-                  </svg></a></li>
-              <li class="social_item"><a class="social_link" href="#">
-                  <svg class="icon icon_i_twitter ">
-                    <use xlink:href="images/sprite/sprite.svg#i_twitter"></use>
-                  </svg></a></li>
-              <li class="social_item"><a class="social_link" href="#">
-                  <svg class="icon icon_i_instagram ">
-                    <use xlink:href="images/sprite/sprite.svg#i_instagram"></use>
-                  </svg></a></li>
-              <li class="social_item"><a class="social_link" href="#">
-                  <svg class="icon icon_i_instagram ">
-                    <use xlink:href="images/sprite/sprite.svg#i_instagram"></use>
-                  </svg></a></li>
-              <li class="social_item"><a class="social_link" href="#">
-                  <svg class="icon icon_i_instagram ">
-                    <use xlink:href="images/sprite/sprite.svg#i_instagram"></use>
-                  </svg></a></li>
-              <li class="social_item"><a class="social_link" href="#">
-                  <svg class="icon icon_i_instagram ">
-                    <use xlink:href="images/sprite/sprite.svg#i_instagram"></use>
-                  </svg></a></li>
-            </ul>
-          </div>
-          <div class="footer_bottom_wrapper">
-            <div class="footer_copyright">Copyright © 2020 <span>UNAIDS</span></div>
-            <ul class="footer_links__list ">
-              <li class="footer_links__item  "><a class="footer_links__link " href="#">Report fraud</a></li>
-              <li class="footer_links__item  "><a class="footer_links__link " href="#">Scam alert</a></li>
-              <li class="footer_links__item  "><a class="footer_links__link " href="#">Terms of use</a></li>
-            </ul>
+        </div>
+        <div class="footer_bottom"> 
+          <div class="section_in">
+            <div class="footer_bottom_wrapper">
+              <div class="footer_copyright">Copyright © 2020 <span>UNAIDS</span></div>
+              <ul class="footer_links__list ">
+                <li class="footer_links__item  "><a class="footer_links__link " href="#">Report fraud</a></li>
+                <li class="footer_links__item  "><a class="footer_links__link " href="#">Scam alert</a></li>
+                <li class="footer_links__item  "><a class="footer_links__link " href="#">Terms of use</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </footer>
