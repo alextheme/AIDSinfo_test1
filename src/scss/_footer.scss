@@ -80,8 +80,14 @@
 		font-weight: 400;
 		letter-spacing: .08333rem;
 
-		margin-right: 4.5rem;
+		@include bp($point_1, min) {
+			margin-right: 4.5rem;
+		}
 
+		@include bp($point_1) {
+			margin-right: 3rem;
+		}
+	
 		@include bp($point_3) {
 			display: none;
 		}
@@ -102,10 +108,17 @@
 			margin-right: 0;
 		}
 
+		@include bp($point_1, min) {
+			margin-right: 5rem;
+		}
+
+		@include bp($point_1) {
+			margin-right: 2rem;
+		}
+
 		@include bp($point_2, min) {
 			width: 11rem;
 			height: 4rem;
-			margin-right: 5rem;
 		}
 
 		@include bp($point_3) {
