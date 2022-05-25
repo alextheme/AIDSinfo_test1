@@ -15,10 +15,19 @@
 .search_wrapper {
 	max-width: 1064px;
 	margin: 0 auto;
-	padding-top: 4.4rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 	padding-bottom: 3.4rem;
 
 	background: $grey;
+
+	@include bp($point_2, min) {
+		padding-top: 4.4rem;
+	}
+
+	@include bp($point_3) {
+		padding-top: 6.4rem;
+	}
 }
 //------------------------------------------------wrapper###
 
@@ -139,16 +148,6 @@
 	overflow: hidden;
 	color: $white;
 
-	&.wiev_more_mod {
-		@extend %transition_all;
-
-		max-height: none;
-
-		&::after {
-			display: none;
-		}
-	}
-
 	&::after {
 		position: absolute;
 		bottom: 0;
@@ -173,7 +172,6 @@
 	margin-bottom: .8rem;
 
 	overflow: hidden;
-	white-space: nowrap;
 	cursor: pointer;
 
 	&:hover {
@@ -186,6 +184,16 @@
 
 			transform: translate(1rem, -50%);
 		}
+	}
+
+	@include bp($point_4, min) {
+		white-space: nowrap;
+	}
+	
+	@include bp($point_4) {
+		flex-direction: column;
+
+		white-space: normal;
 	}
 }
 
@@ -227,8 +235,14 @@
 
 
 //------------------------------------------------open wiev more
-.wiev_more_mod {
+.full_size_mod {
+	@extend %transition_all;
 
+	max-height: none;
+
+	&::after {
+		display: none;
+	}
 }
 //------------------------------------------------open wiev more###
 
@@ -238,14 +252,11 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	bottom: 0;
-	right: 0;
 	z-index: 100;
 
 	display: block;
 
-	// width: 100vw;
-	// max-height: 100vh;
+	background-color: $grey;
 	
 	padding: 0;
 
@@ -253,12 +264,10 @@
 		display: none;
 	}
 
-	.wiev_more_mod {
-		max-height: calc(100vh - 260px);
+	.full_size_mod {
+		max-height: calc(100vh - 290px);
     overflow: auto;
 	}
-
-
 }
 //------------------------------------------------open search mobile###
 

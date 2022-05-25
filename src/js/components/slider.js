@@ -117,6 +117,7 @@ const slider = (GLOBAL_VARS) => {
 
 		$(elementsUnderTheMouse).each((_, item) => {
 			if ($(item).hasClass('slider_item')) {
+				$currentElement = $(item);
 				makeAnimation($sliderItems, $(item), currClassName);
 			}
 		});

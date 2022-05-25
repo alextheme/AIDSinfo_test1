@@ -9,14 +9,11 @@ $(window).on('resize', () => {
 const search = (v) => {
 	$('.btn_wiev_more').on('click', () => {
 		$('.btn_wiev_more').toggleClass('active_mod');
-		$('.search_popular__list').toggleClass('wiev_more_mod');
+		$('.search_popular__list').toggleClass('full_size_mod');
 
 		const sectionTop = $('.search').position().top;
 
 		const heightHeader = window.getComputedStyle(document.documentElement).getPropertyValue('--height-header').replace(/[^0-9.]/g, '') * 10;
-		const heightHeaderMob = window.getComputedStyle(document.documentElement).getPropertyValue('--height-header-mobile').replace(/[^0-9.]/g, '') * 10;
-
-		console.log('v: ', v);
 
 		window.scrollTo(0, sectionTop - heightHeader);
 	});
@@ -26,6 +23,8 @@ const search = (v) => {
 	});
 
 	$('.btn_close_srch').on('click', () => {
+		$('.btn_wiev_more').removeClass('active_mod');
+		$('.search_popular__list').removeClass('full_size_mod');
 		$('.section.search').removeClass('open_search_mob');
 	});
 };
