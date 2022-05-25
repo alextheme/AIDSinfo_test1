@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 //------------------------------------------------search
 .search {
 	padding: 4.2rem 1rem 10rem;
@@ -119,7 +123,27 @@
 
 //------------------------------------------------popular q
 .search_popular_w {
+	position: relative;
+
+	height: 12.8rem;
 	margin-bottom: 3rem;
+
+	overflow: hidden;
+
+	&::after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		
+		width: 100%;
+		height: 100%;
+		content: '';
+
+		background: #00000000;
+		background: -webkit-linear-gradient(top, #00000000, #808284);
+		background: -moz-linear-gradient(top, #00000000, #808284);
+		background: linear-gradient(to bottom, #00000000, #808284);
+	}
 }
 
 .search_popular__header {
@@ -138,9 +162,7 @@
 	@extend %transition_all;
 
 	position: relative;
-
-	max-height: 8.4rem;
-
+	// max-height: 8.4rem;
 	font-size: 1.5rem;
 	line-height: 2.3rem;
 	font-weight: 400;
@@ -148,20 +170,20 @@
 	overflow: hidden;
 	color: $white;
 
-	&::after {
-		position: absolute;
-		bottom: 0;
-		left: 0;
+	// &::after {
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	left: 0;
 		
-		width: 100%;
-		height: 100%;
-		content: '';
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	content: '';
 
-		background: #00000000;
-		background: -webkit-linear-gradient(top, #00000000, #808284);
-		background: -moz-linear-gradient(top, #00000000, #808284);
-		background: linear-gradient(to bottom, #00000000, #808284);
-	}
+	// 	background: #00000000;
+	// 	background: -webkit-linear-gradient(top, #00000000, #808284);
+	// 	background: -moz-linear-gradient(top, #00000000, #808284);
+	// 	background: linear-gradient(to bottom, #00000000, #808284);
+	// }
 }
 
 .search_popular__item {
@@ -235,11 +257,7 @@
 
 
 //------------------------------------------------open wiev more
-.full_size_mod {
-	@extend %transition_all;
-
-	max-height: none;
-
+.open_list_mod {
 	&::after {
 		display: none;
 	}
@@ -262,11 +280,6 @@
 
 	.search_header {
 		display: none;
-	}
-
-	.full_size_mod {
-		max-height: calc(100vh - 290px);
-    overflow: auto;
 	}
 }
 //------------------------------------------------open search mobile###

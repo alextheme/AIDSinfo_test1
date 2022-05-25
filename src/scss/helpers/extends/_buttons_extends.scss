@@ -86,7 +86,7 @@
 		}
 	}
 
-	&.active_mod::before {
+	&.open_list_mod::before {
 	 	transform: rotate(-135deg) translate(20%, 20%);
 	}
 }

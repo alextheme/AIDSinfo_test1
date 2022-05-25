@@ -7,16 +7,32 @@ $(window).on('resize', () => {
 // console . log ( $ body );
 
 const search = (v) => {
-	$('.btn_wiev_more').on('click', () => {
-		$('.btn_wiev_more').toggleClass('active_mod');
-		$('.search_popular__list').toggleClass('full_size_mod');
+	// ----------------------------animation height section search block
+	const btn = $('.btn_wiev_more');
+	const searchBlock = $('.search_popular_w');
+	const prevHeight = searchBlock.height();
 
+	btn.on('click', () => {
+		// scroll
 		const sectionTop = $('.search').position().top;
-
 		const heightHeader = window.getComputedStyle(document.documentElement).getPropertyValue('--height-header').replace(/[^0-9.]/g, '') * 10;
-
 		window.scrollTo(0, sectionTop - heightHeader);
+
+		// size height
+		const heightCorrection = 40;
+		const height = $('.search_popular__list').height();
+
+		if (btn.hasClass('open_list_mod')) {
+			btn.removeClass('open_list_mod');
+			searchBlock.animate({ height: `${prevHeight}px` });
+		} else {
+			btn.addClass('open_list_mod');
+			searchBlock.animate({ height: `${height + heightCorrection}px` });
+		}
+
+		searchBlock.toggleClass('open_list_mod');
 	});
+	// ----------------------------animation height section search block###
 
 	$('.header__search_btn').on('click', () => {
 		$('.section.search').addClass('open_search_mob');
