@@ -8,15 +8,14 @@
 }
 
 .section_in {
-	max-width: calc($page_width - var(--gl-indent) * 2);
+	max-width: calc(#{$page_width} - var(--gl-indent) * 2);
 	width: 100%;
 	margin: 0 auto;
-	// background-color: rgba(255, 0, 0, 0.13); // TODO: remove style
 }
 
 
 //-----------------------------------------------brmsk
-.search_section_in {
+.search_in {
 	max-width: 74rem;
 	margin: 0 auto;
 }

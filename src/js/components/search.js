@@ -4,7 +4,7 @@ $(window).on('resize', () => {
 	windowWidth = window.innerWidth;
 });
 
-// console . log ( $ body );
+// console.log($body);
 
 const search = (v) => {
 	// ----------------------------animation height section search block

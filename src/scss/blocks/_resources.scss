@@ -27,37 +27,35 @@ $gap_resource_item: 8rem;
 .resources__list {
 	display: flex;
 	flex-wrap: wrap;
+
+	margin-left: -4rem;
+	margin-right: -4rem;
 }
 
 .resources__item {
-	width: calc((100% - $gap_resource_item) / $count_resource_item);
 	min-height: 9.5rem;
 
-	margin-right: $gap_resource_item;
-	margin-bottom: 3.3rem;
+	padding-left: 4rem;
+	padding-right: 4rem;
 
-	border-bottom: 1px solid $color_light_grey;
+	@include bp($point_2, min) {
+		width: calc(100% / #{$count_resource_item});
+		margin-bottom: 3.3rem;
 
-	@include each($count_resource_item) {
-		margin-right: 0;
-	}
-
-	@include last($count_resource_item) {
-		border-bottom: none;
-		margin-bottom: 0;
+		&:not(:nth-last-child(-n + 2))  {
+			border-bottom: 1px solid $color_light_grey;
+		}
 	}
 
 	@include bp($point_3) {
 		width: 100%;
+		border-bottom: 1px solid $color_light_grey;
 
-		@include each(1) {
-			margin-right: 0;
+		&:not(:last-child)  {
 			margin-bottom: 3.3rem;
-			border-bottom: 1px solid $color_light_grey;
 		}
 
-		@include last(1) {
-			margin-right: 0;
+		&:last-child {
 			margin-bottom: 4rem;
 		}
 	}

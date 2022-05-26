@@ -1,11 +1,10 @@
 @use "sass:list";
 
 $width_big_el: 45.5vw;
-$width_smal_el: calc((100vw - $width_big_el) / 4);
+$width_smal_el: calc((100vw - #{$width_big_el}) / 4);
 
-$height_slider: calc($width_big_el * (78 / 65.6));
+$height_slider: calc(#{$width_big_el} * (78 / 65.6));
 $height_slider_mobile: calc(78 / 65.6 * 100vw);
-
 
 /* SLICK-SLIDER */
 .slider {
@@ -13,7 +12,8 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
     @include bp($point_2, min) {
       @for $index from 1 through list.length($list) {
         .slick-active:nth-child(#{$index}) {
-          background-image: url( list.nth( $list, $index ));
+          $url: list.nth($list, $index);
+          background-image: url($url);
           background-size: cover;
         }
       }
@@ -48,11 +48,11 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
 
       animation: unset;
     }
-    
+
     @include bp($point_6) {
       height: 60rem;
     }
-  } 
+  }
 
   .slicer_item__picture_bg_w {
     @extend %transition_opacity;
@@ -61,12 +61,12 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
 
     height: 100%;
     width: 100%;
-    
+
     opacity: 0;
     animation: fadeOut 3s;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -78,10 +78,10 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
     @include bp($point_2) {
       height: 60rem;
     }
-
+    
     @include bp($point_3) {
       height: $height_slider_mobile;
-    
+
       &::before {
         display: none;
       }
@@ -103,7 +103,7 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
   //---------------------------------------------dots
   .slick-dots {
     @extend %global_flex_block_row_wrap_center_center;
-    
+
     position: absolute;
     bottom: 0;
     left: 0;
@@ -115,7 +115,7 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
     width: 100%;
 
     li {
-      padding: 0 .3em;
+      padding: 0 0.3em;
 
       &.slick-active {
         button {
@@ -136,7 +136,7 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
       font-size: 0;
 
       border-radius: 50%;
-      background-color: rgba(255, 255, 255, .3);
+      background-color: rgba(255, 255, 255, 0.3);
 
       cursor: pointer;
 
@@ -144,7 +144,6 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
       &:focus {
         background-color: $white;
       }
-      
     }
 
     @include bp($point_2) {
@@ -152,8 +151,7 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
     }
   }
   //---------------------------------------------dots###
-  
-  
+
   //---------------------------------------------current slick
   .slick-current {
     width: $width_big_el;
@@ -162,7 +160,7 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
 
     .slicer_item__picture_bg_w {
       opacity: 1;
-      animation: fadeIn .5s;
+      animation: fadeIn 0.5s;
     }
 
     .slider_item__text_w {
@@ -181,7 +179,7 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
         margin-bottom: 0;
         padding-left: 1rem;
       }
-      
+
       @include bp($point_5) {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -192,10 +190,10 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
       @extend %font_avenir_light;
 
       width: max-content;
-      
-      letter-spacing: .0625rem;
+
+      letter-spacing: 0.0625rem;
       line-height: 3.4rem;
-      
+
       color: $white;
 
       @include bp($point_1) {
@@ -206,11 +204,11 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
       @include bp($point_4, min) {
         font-size: 3.2rem;
       }
-      
+
       @include bp($point_4) {
         font-size: 2.4rem;
       }
-      
+
       @include bp($point_5) {
         font-size: 1.8rem;
       }
@@ -219,7 +217,7 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
     .slider_item__description {
       display: block;
 
-      width: calc($width_big_el - 64px);
+      width: calc(#{$width_big_el} - 64px);
 
       font-size: 1.4rem;
       line-height: 2.4rem;
@@ -232,13 +230,13 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
         height: unset;
         margin-bottom: 12.6rem;
       }
-    
+
       @include bp($point_5) {
         font-size: 1.2rem;
         line-height: 1.8rem;
-        
+
         max-height: 9rem;
-        
+
         overflow: hidden;
       }
     }
@@ -303,9 +301,9 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
   @extend %font_avenir_light;
 
   margin-top: 11.5rem;
-  
-	color: $white;
-  
+
+  color: $white;
+
   @include bp($point_1) {
     margin-top: 5rem;
   }
@@ -329,14 +327,14 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
   @extend %font_avenir_roman;
 
   max-width: 74rem;
-  
-	color: $white;
+
+  color: $white;
 
   @include bp($point_2, min) {
     font-size: 1.6rem;
     line-height: 2.6rem;
   }
-  
+
   @include bp($point_3) {
     font-size: 1.4rem;
     line-height: 2.4rem;
@@ -360,7 +358,7 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
 
   color: #fff;
 
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   will-change: transform;
 
   @include bp($point_1) {
@@ -393,39 +391,63 @@ $height_slider_mobile: calc(78 / 65.6 * 100vw);
 }
 //---------------------------------------------text###
 
-
 //---------------------------------------------animations
 @keyframes show_text_below {
-  0% { opacity: 0; }
-  25% {  transform: translate(0, 20rem); opacity: 0; }
-  100% { transform: translate(0, 0); opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  25% {
+    transform: translate(0, 20rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
 }
 
 @keyframes expand_width {
-  0% { width: $width_smal_el; }
-  100% { width: $width_big_el; }
+  0% {
+    width: $width_smal_el;
+  }
+  100% {
+    width: $width_big_el;
+  }
 }
 
 @keyframes to_narrow {
-  0% {  width: $width_big_el; }
-  100% {  width: $width_smal_el; }
+  0% {
+    width: $width_big_el;
+  }
+  100% {
+    width: $width_smal_el;
+  }
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 //---------------------------------------------animations###
 
-
 /* MEDIA */
 @include bp($point_3) {
-  .slider_item.slick-slide { height: $height_slider_mobile; }
+  .slider_item.slick-slide {
+    height: $height_slider_mobile;
+  }
 }
 
 @include bp($point_6) {
