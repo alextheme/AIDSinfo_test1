@@ -1,4 +1,10 @@
 const search = () => {
+	const mods = {
+		open: 'search--open_mod',
+		openBtn: 'btn_view_more--open_mod',
+		maxHeight: 'search_popular_w--height_mod',
+		closeMask: 'search_mask--close_mod',
+	};
 	const $searchSection = $('.section.search');
 	const $searchListWrapper = $('.search_popular_w');
 	const $buttonExpandList = $('.btnViewFullList');
@@ -11,7 +17,7 @@ const search = () => {
 	 * @returns {number|*}
 	 */
 	const getListHeight = () => {
-		if ($searchSection.hasClass('open_search_mod')) {
+		if ($searchSection.hasClass(mods.open)) {
 			console.log('1');
 			return window.innerHeight - correctionHeight;
 		} else {
@@ -25,7 +31,7 @@ const search = () => {
 	 * Scroll page to top element 'section'
 	 */
 	function makeScrollTop() {
-		if (!$searchSection.hasClass('open_search_mod')) {
+		if (!$searchSection.hasClass(mods.open)) {
 			const topMargin = window.getComputedStyle(document.documentElement).getPropertyValue('--height-header').replace(/[^0-9.]/g, '') * 10;
 			window.scrollTo(0, $searchSection.position().top - topMargin);
 		}
@@ -35,21 +41,21 @@ const search = () => {
 	 * Change list height
 	 */
 	function toggleHeight() {
-		if ($buttonExpandList.hasClass('expanded_list_mod')) {
+		if ($buttonExpandList.hasClass(mods.openBtn)) {
 			$buttonExpandList
 				.text(textButtonOpenFullList.open)
-				.removeClass('expanded_list_mod');
+				.removeClass(mods.openBtn);
 			$searchListWrapper
 				.animate({ maxHeight: `${prevHeight}px` })
-				.removeClass('full_list_mod')
+				.removeClass(mods.maxHeight)
 				.scrollTop(0);
 		} else {
 			$buttonExpandList
 				.text(textButtonOpenFullList.close)
-				.addClass('expanded_list_mod');
+				.addClass(mods.openBtn);
 			$searchListWrapper
 				.animate({ maxHeight: `${getListHeight()}px` })
-				.addClass('full_list_mod');
+				.addClass(mods.maxHeight);
 		}
 	}
 
@@ -59,7 +65,7 @@ const search = () => {
 	 */
 	const createMask = () => {
 		const mask = document.createElement('div');
-		mask.classList.add('search_mask', 'search_mask--close_mod');
+		mask.classList.add('search_mask', mods.closeMask);
 		$searchSection.append(mask);
 		return mask;
 	};
@@ -69,8 +75,7 @@ const search = () => {
 	 * @param mask to remove unwanted element
 	 */
 	const closeSearchSection = (mask) => {
-		$buttonExpandList.removeClass('full_list_mod');
-		$searchSection.removeClass('open_search_mod');
+		$searchSection.removeClass(mods.open);
 		mask.remove();
 	};
 
@@ -78,8 +83,8 @@ const search = () => {
 	 * Opening the search window
 	 */
 	function openSearchSection() {
-		$searchSection.addClass('open_search_mod');
-		if ($buttonExpandList.hasClass('expanded_list_mod')) {
+		$searchSection.addClass(mods.open);
+		if ($buttonExpandList.hasClass(mods.openBtn)) {
 			$searchListWrapper.css({ height: `${window.innerHeight - correctionHeight}px` });
 		}
 	}

@@ -11,6 +11,23 @@ html {
 	@include bp($point_3) {
 		display: none;
 	}
+
+	&.search--open_mod {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
+
+		display: block;
+
+		background-color: $grey;
+
+		padding: 0;
+
+		.search_header {
+			display: none;
+		}
+	}
 }
 //------------------------------------------------search###
 
@@ -250,7 +267,7 @@ html {
 //------------------------------------------------buttons###
 
 //------------------------------------------------open view more
-.full_list_mod {
+.search_popular_w--height_mod {
 	height: 100%;
 	overflow: auto;
 
@@ -258,29 +275,10 @@ html {
 		display: none;
 	}
 }
-.expanded_list_mod {
+.btn_view_more--open_mod {
 	width: 14rem;
 }
 //------------------------------------------------open view more###
-
-//------------------------------------------------open search mobile
-.open_search_mod {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 100;
-
-	display: block;
-
-	background-color: $grey;
-
-	padding: 0;
-
-	.search_header {
-		display: none;
-	}
-}
-//------------------------------------------------open search mobile###
 
 //------------------------------------------------close btn
 .btn_close_search {

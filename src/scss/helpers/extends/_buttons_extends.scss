@@ -86,7 +86,7 @@
 		}
 	}
 
-	&.expanded_list_mod::before {
+	&.btn_view_more--open_mod::before {
 	 	transform: rotate(-135deg) translate(20%, 20%);
 	}
 }
