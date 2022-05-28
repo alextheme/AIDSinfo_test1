@@ -32,6 +32,18 @@ html {
 		padding-top: 6.4rem;
 	}
 }
+
+.search_mask--close_mod {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+
+	width: 100vw;
+	height: 100vh;
+
+	background: #000000bb;
+}
 //------------------------------------------------wrapper###
 
 //------------------------------------------------header
@@ -123,7 +135,7 @@ html {
 .search_popular_w {
 	position: relative;
 
-	height: 12.8rem;
+	max-height: 12.8rem;
 	margin-bottom: 3rem;
 
 	overflow: hidden;
@@ -167,21 +179,6 @@ html {
 
 	overflow: hidden;
 	color: $white;
-
-	// &::after {
-	// 	position: absolute;
-	// 	bottom: 0;
-	// 	left: 0;
-
-	// 	width: 100%;
-	// 	height: 100%;
-	// 	content: '';
-
-	// 	background: #00000000;
-	// 	background: -webkit-linear-gradient(top, #00000000, #808284);
-	// 	background: -moz-linear-gradient(top, #00000000, #808284);
-	// 	background: linear-gradient(to bottom, #00000000, #808284);
-	// }
 }
 
 .search_popular__item {
@@ -247,21 +244,27 @@ html {
 	width: 100%;
 }
 
-.btn_wiev_more {
+.btn_view_more {
 	margin: 0 auto;
 }
 //------------------------------------------------buttons###
 
-//------------------------------------------------open wiev more
-.open_list_mod {
+//------------------------------------------------open view more
+.full_list_mod {
+	height: 100%;
+	overflow: auto;
+
 	&::after {
 		display: none;
 	}
 }
-//------------------------------------------------open wiev more###
+.expanded_list_mod {
+	width: 14rem;
+}
+//------------------------------------------------open view more###
 
 //------------------------------------------------open search mobile
-.open_search_mob {
+.open_search_mod {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -280,7 +283,7 @@ html {
 //------------------------------------------------open search mobile###
 
 //------------------------------------------------close btn
-.btn_close_srch {
+.btn_close_search {
 	@extend %transition_all;
 
 	position: absolute;
@@ -334,7 +337,7 @@ html {
 		display: none;
 	}
 
-	@include bp($point_2, min) {
+	@include bp($point_3) {
 		display: block;
 	}
 }

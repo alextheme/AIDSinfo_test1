@@ -41,7 +41,7 @@
 }
 
 //------------------------------------------brmsk
-%button_wiev_more {
+%button_view_more {
 	@extend %transition_all;
 	@extend %font_avenir_roman;
 
@@ -86,12 +86,12 @@
 		}
 	}
 
-	&.open_list_mod::before {
+	&.expanded_list_mod::before {
 	 	transform: rotate(-135deg) translate(20%, 20%);
 	}
 }
 
-%wiev_all_btn {
+%view_all_btn {
 	@extend %transition_opacity;
 	@extend %font_avenir_roman;
 	

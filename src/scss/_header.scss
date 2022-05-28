@@ -46,7 +46,7 @@
 
 	@for $i from 1 through $count_items {
 		&:nth-child(#{$i}) {
-			animation-delay: calc($step_delay * ($offset_index + $i - 1)); 
+			animation-delay: calc(#{$step_delay * ($offset_index + $i - 1)});
 		}
 	}
 }
@@ -165,12 +165,16 @@
 }
 //---------------------------------------------logo###
 
-//---------------------------------------------search	
-.header__search_btn {
+//---------------------------------------------buttons
+.header__buttons_wrapper {
 	position: absolute;
 	top: 0;
-	right: var(--height-header-mobile);
+	right: 0;
 
+	display: flex;
+}
+//---------------------------------------------search
+.header__search_btn {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -196,7 +200,6 @@
 	margin: 0;
 }
 //---------------------------------------------search###
-
 //---------------------------------------------menu trigger
 @mixin menu_butt_line {
 	position: absolute;
@@ -207,10 +210,6 @@
 }
 
 .header__menu_trigger_btn {
-	position: absolute;
-	top: 0;
-	right: 0;
-
 	width: var(--height-header-mobile);
 	height: var(--height-header-mobile);
 
@@ -300,6 +299,7 @@
 	@include menu_butt_line;
 }
 //---------------------------------------------menu trigger###
+//---------------------------------------------buttons###
 
 //---------------------------------------------navigation
 .header__navigation_box {
@@ -326,12 +326,14 @@
 
 .header__nav {
 	@include bp($point_2, min) {
+		$indent: $height_top_header + .2rem;
+
 		position: absolute;
-		top: calc($height_top_header + .2rem);
+		top: $indent;
 		left: 0;
 
 		width: auto;
-		height: calc(var(--height-header) - $height_top_header - .2rem);
+		height: calc(var(--height-header) - #{$indent});
 	}
 }
 

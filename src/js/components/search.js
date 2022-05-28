@@ -1,47 +1,127 @@
-let windowWidth = window.innerWidth;
+const search = () => {
+	const $searchSection = $('.section.search');
+	const $searchListWrapper = $('.search_popular_w');
+	const $buttonExpandList = $('.btnViewFullList');
+	const prevHeight = $searchListWrapper.height();
+	const textButtonOpenFullList = { open: $buttonExpandList.text(), close: 'collapse list' };
+	const correctionHeight = 250;
 
-$(window).on('resize', () => {
-	windowWidth = window.innerWidth;
-});
-
-// console.log($body);
-
-const search = (v) => {
-	// ----------------------------animation height section search block
-	const btn = $('.btn_wiev_more');
-	const searchBlock = $('.search_popular_w');
-	const prevHeight = searchBlock.height();
-
-	btn.on('click', () => {
-		// scroll
-		const sectionTop = $('.search').position().top;
-		const heightHeader = window.getComputedStyle(document.documentElement).getPropertyValue('--height-header').replace(/[^0-9.]/g, '') * 10;
-		window.scrollTo(0, sectionTop - heightHeader);
-
-		// size height
-		const heightCorrection = 40;
-		const height = $('.search_popular__list').height();
-
-		if (btn.hasClass('open_list_mod')) {
-			btn.removeClass('open_list_mod');
-			searchBlock.animate({ height: `${prevHeight}px` });
+	/**
+	 * Get list height in collapsed or expanded state
+	 * @returns {number|*}
+	 */
+	const getListHeight = () => {
+		if ($searchSection.hasClass('open_search_mod')) {
+			console.log('1');
+			return window.innerHeight - correctionHeight;
 		} else {
-			btn.addClass('open_list_mod');
-			searchBlock.animate({ height: `${height + heightCorrection}px` });
+			const heightCorrection = 42;
+			console.log('2');
+			return $('.search_popular__list').height() + heightCorrection;
 		}
+	};
 
-		searchBlock.toggleClass('open_list_mod');
+	/**
+	 * Scroll page to top element 'section'
+	 */
+	function makeScrollTop() {
+		if (!$searchSection.hasClass('open_search_mod')) {
+			const topMargin = window.getComputedStyle(document.documentElement).getPropertyValue('--height-header').replace(/[^0-9.]/g, '') * 10;
+			window.scrollTo(0, $searchSection.position().top - topMargin);
+		}
+	}
+
+	/**
+	 * Change list height
+	 */
+	function toggleHeight() {
+		if ($buttonExpandList.hasClass('expanded_list_mod')) {
+			$buttonExpandList
+				.text(textButtonOpenFullList.open)
+				.removeClass('expanded_list_mod');
+			$searchListWrapper
+				.animate({ maxHeight: `${prevHeight}px` })
+				.removeClass('full_list_mod')
+				.scrollTop(0);
+		} else {
+			$buttonExpandList
+				.text(textButtonOpenFullList.close)
+				.addClass('expanded_list_mod');
+			$searchListWrapper
+				.animate({ maxHeight: `${getListHeight()}px` })
+				.addClass('full_list_mod');
+		}
+	}
+
+	/**
+	 * Create a mask to bind the search window close event to it
+	 * @returns {HTMLDivElement}
+	 */
+	const createMask = () => {
+		const mask = document.createElement('div');
+		mask.classList.add('search_mask', 'search_mask--close_mod');
+		$searchSection.append(mask);
+		return mask;
+	};
+
+	/**
+	 * Closing the search window
+	 * @param mask to remove unwanted element
+	 */
+	const closeSearchSection = (mask) => {
+		$buttonExpandList.removeClass('full_list_mod');
+		$searchSection.removeClass('open_search_mod');
+		mask.remove();
+	};
+
+	/**
+	 * Opening the search window
+	 */
+	function openSearchSection() {
+		$searchSection.addClass('open_search_mod');
+		if ($buttonExpandList.hasClass('expanded_list_mod')) {
+			$searchListWrapper.css({ height: `${window.innerHeight - correctionHeight}px` });
+		}
+	}
+
+	/**
+	 * open/close search mobile
+	 */
+	$('.btnOpenSearchMob').on('click', () => {
+		const mask = createMask();
+
+		/* set event handlers for section closing */
+		// close when clicking outside the section (by mask)
+		$(mask).on('click', () => {
+			closeSearchSection(mask);
+		});
+		// close on click on the close button
+		$('.btnCloseSearchMob').on('click', () => {
+			closeSearchSection(mask);
+		});
+
+		// open search mobile
+		openSearchSection();
 	});
-	// ----------------------------animation height section search block###
 
-	$('.header__search_btn').on('click', () => {
-		$('.section.search').addClass('open_search_mob');
+	/**
+	 * view the full list
+	 */
+	$buttonExpandList.on('click', (e) => {
+		// scroll
+		makeScrollTop();
+
+		// toggle height
+		toggleHeight();
 	});
 
-	$('.btn_close_srch').on('click', () => {
-		$('.btn_wiev_more').removeClass('active_mod');
-		$('.search_popular__list').removeClass('full_size_mod');
-		$('.section.search').removeClass('open_search_mob');
+	/**
+	 * select a value from the list and paste into the search field
+	 */
+	$('.search_popular__item').on('click', (event) => {
+		const input = $('.search_input');
+		const text = $(event.currentTarget).children('.search_popular__text').text();
+		input.val(text);
 	});
 };
 
